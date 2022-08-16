@@ -1,3 +1,7 @@
-# limitless_notes
+# 📚 courses
 
-Notes from the homonym book
+A repository that contains what we study and want to share.
+
+## list
+- [wip] Limitless
+- [wip] dart
