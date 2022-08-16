@@ -1,5 +1,5 @@
 
-# INTRODUCCION
+# Introducción
 
 Si un genio se ofreciera a concederte un deseo, pero uno solo, qué pedirías? Deseos ilimitados! Por supuesto!
 Ahora, imagina que soy tu genio del aprendizaje y puedo concederte un deseo. Qué te gustaría aprender? Aprender a aprender verdad?
