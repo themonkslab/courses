@@ -30,7 +30,3 @@ Tienes el superpoder extremo en tu cráneo y la capacidad de perfeccionarlo y ha
 Cuánto valor agregado puede ofrecer una mente ilimitada a ti y a los demás? Hemos entrado en una __economía__ experta en la que el __poder cerebral triunfa sobre la fuerza bruta__.
 
 Todo lo que tenemos que hacer es __actualizar tu cerebro__ y __una de mis formas favoritas__ es la que ya estás haciendo: se llama __lectura__.
-
-
-
-
