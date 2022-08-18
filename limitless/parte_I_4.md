@@ -58,6 +58,15 @@ Muy a menudo las respuestas que queremos están ahí pero no hacemos las pregunt
 
 Cuál es tu pregunta dominante? Decidí que el superpoder que sería mejor para mí sería la invisibilidad y __mi pregunta fue cómo puede permanecer invisible__. Sufría todo el tiempo. Mientras fui aprendiendo del mundo que me rodeaba, __mi pregunta dominante cambió a cómo puedo mejorar esto?__
 
+## Prepara tu mente
 
+Las preguntas dirigen tu enfoque e incluso la comprensión lectora.
 
+Te propongo tres preguntas dominantes para que te hagas durante nuestro viaje juntos:
+
+- Cómo puedo utilizar esto?
+- Por qué debo utilizar esto?
+- Cuándo utilizaré esto?
+
+En lugar de leer pasivamente, considera estas preguntas a medida que asimiles los conocimientos de este libro.
 

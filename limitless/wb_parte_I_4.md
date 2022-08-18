@@ -52,7 +52,10 @@ Antes de cada lectura, tómate unos minutos para pensar o escribir lo que recuer
 
 Cuáles es una de tus preguntas dominantes? Las que te haces todo el tiempo?
 
-**Mau**: CONTINUE
+**Mau**: no me dominan mucho las preguntas sino las posibilidades en el futuro. En eso se concentra mi manía. Y podría mejorar y disfrutar más preguntándome cómo puedo hacer este momento más disfrutable? Qué puedo aprender de esto hoy?
 <!-- **Tin**: -->
 <!-- **Tete**: -->
 
+## CR 8
+
+Escribe las tres preguntas dominantes que propone Jim en algún lugar donde puedas verlas todo el tiempo.
