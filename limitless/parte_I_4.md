@@ -31,7 +31,7 @@ Revisa tu postura. La profundidad de tu respiración. Emociónate por cómo te b
 Si deseas reducir drásticamente tu curva de aprendizaje, aprende con la intención de enseñar la información a otra persona. También puedes trabajar con otra persona y eso no solo te ayudará a ser responsable sino que también te dará alguien para practicar aquello que estás aprendiendo.
 
 ### Agendar
- 
+
 Cuál es la herramienta de desmpeño personal más simple y poderosa? Tu agenda. Apuntamos cosas importantes en nuestra agenda.
 
 ### Revisar
@@ -40,7 +40,7 @@ Puedes retener mejor la información revisándola en varias sesiones separadas. 
 
 ## Elegir sabiamente
 
-Ser ilimitado es una elección y es totalmente tuya independientemente de las circunstancias. Puedes optar renunciar a ese poder pero por qué lo harías? 
+Ser ilimitado es una elección y es totalmente tuya independientemente de las circunstancias. Puedes optar renunciar a ese poder pero por qué lo harías?
 
 > "Es tu última oportunidad. Después de esto no hay vuelta atrás. Tomas la píldora azul; la historia se termina, te despiertas en tu cama y crees lo que quieras creer. Tomas la pastilla roja, te quedas en el País de las maravillas y te muestro lo profunda que es la madriguera del conejo. Recuerda: todo lo que te ofrezco es la verdad. Nada más". Morfeo
 
@@ -69,4 +69,3 @@ Te propongo tres preguntas dominantes para que te hagas durante nuestro viaje ju
 - Cuándo utilizaré esto?
 
 En lugar de leer pasivamente, considera estas preguntas a medida que asimiles los conocimientos de este libro.
-
