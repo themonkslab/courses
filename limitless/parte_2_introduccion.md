@@ -11,4 +11,3 @@ La mayoría de nosotros nos comportamos como el elefante. En algún momento tuvi
 En los próximos capítulos __descubrirás de dónde vienen estas mentiras__, cómo te apresan y qué puedes hacer al respecto. Y hazte esta pregunta: cuántas de mis limitaciones no son más que mentiras y tonterías?
 
 > "No es lo que no sabes lo que te mete en problemas. Es lo que sabes con certeza que simplemente no es así." Mark Twain.
-
