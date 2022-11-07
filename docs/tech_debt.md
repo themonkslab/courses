@@ -8,7 +8,7 @@ _Made with love by the_ **Monkslab** ❤️
 
 ### :dash: 10' minutes things
 
---
+- Convertir el texto de todas las imágenes a un tamaño mayor para poder verlo cómodamente desde un celular.
 
 ### :no_entry_sign: High
 
