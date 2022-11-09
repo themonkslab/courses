@@ -1,9 +1,14 @@
 {
-    "cursos": [
+    "courses": [
         {
             "id": 0,
-            "name": "Dart y TDD",
-            "raw_url": ""
+            "title": "Limitless",
+            "url": "https://raw.githubusercontent.com/themonkslab/courses/main/limitless/limitless_course.json"
+        },
+        {
+            "id": 1,
+            "title": "Dart y TDD",
+            "url": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/dart_course.json"
         }
     ]
 }
