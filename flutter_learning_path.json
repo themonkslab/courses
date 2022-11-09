@@ -7,7 +7,7 @@
         },
         {
             "id": 1,
-            "title": "Dart y TDD",
+            "title": "Dart y Test Driven Design",
             "url": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/dart_course.json"
         }
     ]
