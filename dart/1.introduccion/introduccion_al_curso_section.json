@@ -1,1 +1,19 @@
-{}
+{
+    "articles": [
+        {
+            "id": 0,
+            "title": "Sacar provecho del curso'",
+            "url": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.1_sacar_provecho_del_curso.md"
+        },
+        {
+            "id": 1,
+            "title": "Introducción a Dart",
+            "url": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.3_introduccion_a_dart.md"
+        },
+        {
+            "id": 2,
+            "title": "Introducción a Dartpad",
+            "url": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.4_introduccion_a_dart_pad.md"
+        }
+    ]
+}
