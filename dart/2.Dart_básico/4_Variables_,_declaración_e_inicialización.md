@@ -24,7 +24,7 @@ void main() {
 }
 ```
 
-![Faltan argumentos!](2.4.1_faltan_argumentos.png)
+![Faltan argumentos!](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.4.1_faltan_argumentos.png)
 
 Ya aprendimos también que una lína de código en _Dart_, tiene que finalizar con ';', por lo que sabemos ese no es el error que nos está mostrando. Pero además de esto, tenemos una explicación bien clara: 'faltan argumentos'. Ya vimos en el pasado que `print('Hola mundo')` mostraba en consola la frase 'Hola mundo'. Cuál les parece entonces que podría ser el siguiente paso para _arreglar_ el test que creamos?
 

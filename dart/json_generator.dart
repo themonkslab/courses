@@ -49,7 +49,8 @@ Future<List<dynamic>> createDartCourse() async {
           final articleName = (entity.path
               .replaceAll('./dart/$directoryNameWithUnderscore/', '')
               .replaceAll('_', ' ')
-              .replaceFirst(' ', '.'));
+              .replaceFirst(' ', '.')
+              .replaceAll('.md', ''));
 
           final baseContentUrl =
               'https://raw.githubusercontent.com/themonkslab/courses/main';
@@ -63,7 +64,7 @@ Future<List<dynamic>> createDartCourse() async {
             // example: https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.2_que_esperamos_nosotros.md
             'contentUrl': contentUrl,
             'author': 'Mau Di Bert',
-            'published': '',
+            'published': DateTime.now().toString(),
           });
         }
       }
