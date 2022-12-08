@@ -1,6 +1,18 @@
+import 'dart:convert';
 import 'dart:io';
 
 void main() async {
+  // Get course from local files
+  final course = await createDartCourse();
+  // Create file to store a json
+  final filename = 'dart_course.txt';
+  // Encode it
+  final jsonCourse = json.encode(course);
+  // Write the file
+  await File(filename).writeAsString(jsonCourse);
+}
+
+Future<List<dynamic>> createDartCourse() async {
   // Save directories as Directory in List, without 'assets' directory
   final directories = <Directory>[];
   final dir = Directory('./dart');
@@ -68,6 +80,7 @@ void main() async {
   }
 
   directoriesList.sort((a, b) => orderList(a, b));
+  return directoriesList;
 }
 
 int orderList(a, b) {
@@ -75,5 +88,3 @@ int orderList(a, b) {
   final bDouble = double.parse((b['title']).split('.').first);
   return aDouble.compareTo(bDouble);
 }
-
-//TODO -CONT- 2.10 smaller than 2.1 -> rename to 10 and 1
