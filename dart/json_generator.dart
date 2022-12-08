@@ -38,7 +38,8 @@ void main() async {
         if (articleExtension == '.md') {
           final articleName = (entity.path
               .replaceAll('./dart/$directoryNameWithUnderscore/', '')
-              .replaceAll('_', ' '));
+              .replaceAll('_', ' ')
+              .replaceFirst(' ', '.'));
 
           final baseContentUrl =
               'https://raw.githubusercontent.com/themonkslab/courses/main';
@@ -59,8 +60,8 @@ void main() async {
     }
 
     articles.sort(((a, b) {
-      final aDouble = double.parse((a['title']).split(' ').first);
-      final bDouble = double.parse((b['title']).split(' ').first);
+      final aDouble = double.parse((a['title']).split('.').first);
+      final bDouble = double.parse((b['title']).split('.').first);
       return aDouble.compareTo(bDouble);
     }));
 
