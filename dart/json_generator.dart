@@ -1,9 +1,7 @@
 import 'dart:io';
 
-// 'contentUrl':
-//     'https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.1_sacar_provecho_del_curso.md',
 void main() async {
-  // Save directories as Directory in List, without 'assets'
+  // Save directories as Directory in List, without 'assets' directory
   final directories = <Directory>[];
   final dir = Directory('./dart');
 
@@ -17,7 +15,7 @@ void main() async {
     }
   }
 
-  // Saves '.md' files in directory
+  // Save '.md' files in directory
   final directoriesList = [];
   for (var directory in directories) {
     final articles = [];
@@ -59,11 +57,7 @@ void main() async {
       }
     }
 
-    articles.sort(((a, b) {
-      final aDouble = double.parse((a['title']).split('.').first);
-      final bDouble = double.parse((b['title']).split('.').first);
-      return aDouble.compareTo(bDouble);
-    }));
+    articles.sort(((a, b) => orderList(a, b)));
 
     directoriesList.add({
       'path': directory.path,
@@ -73,28 +67,13 @@ void main() async {
     });
   }
 
-  // final orderedDirectoriesMap = Map.fromEntries(directoriesMap.entries.toList()
-  //   ..sort(((a, b) => a.key.compareTo(b.key))));
+  directoriesList.sort((a, b) => orderList(a, b));
+}
 
-  // for (var orderedDirectory in orderedDirectoriesMap.entries) {}
-
-  // final orderedArticles = List.from(mdFiles.asMap().entries.toList()
-  //   ..sort(((a, b) => a.key.compareTo(b.key))));
-
-  // final Map sections = {};
-
-  // for (Directory directory in directories) {
-  //   final name =
-  //       (directory.path.replaceAll('./dart/', '')).replaceAll('_', ' ');
-  //   sections[int.parse(name[0])] = {
-  //     'title': name,
-  //     'path': directory.path,
-  //   };
-  // }
-
-  // final orderedSections = Map.fromEntries(
-  //     sections.entries.toList()..sort((e1, e2) => e1.key.compareTo(e2.key)));
-  // return orderedSections;
+int orderList(a, b) {
+  final aDouble = double.parse((a['title']).split('.').first);
+  final bDouble = double.parse((b['title']).split('.').first);
+  return aDouble.compareTo(bDouble);
 }
 
 //TODO -CONT- 2.10 smaller than 2.1 -> rename to 10 and 1
