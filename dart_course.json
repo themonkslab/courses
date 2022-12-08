@@ -1,11 +1,11 @@
 [
     {
-        "path": "./dart/1.Introducción",
+        "path": "section_0",
         "title": "1.Introducción",
         "description": "",
         "articles": [
             {
-                "path": "./dart/1.Introducción/1_Sacar_provecho_del_curso.md",
+                "path": "article_0",
                 "title": "1.Sacar provecho del curso.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/1_Sacar_provecho_del_curso.md",
@@ -13,7 +13,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/1.Introducción/2_Qué_esperamos_nosotros.md",
+                "path": "article_1",
                 "title": "2.Qué esperamos nosotros.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/2_Qué_esperamos_nosotros.md",
@@ -21,7 +21,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/1.Introducción/3_Introducción_a_Dart.md",
+                "path": "article_2",
                 "title": "3.Introducción a Dart.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/3_Introducción_a_Dart.md",
@@ -29,7 +29,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/1.Introducción/4_Introducción_a_Dartpad.md",
+                "path": "article_3",
                 "title": "4.Introducción a Dartpad.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.Introducción/4_Introducción_a_Dartpad.md",
@@ -39,12 +39,12 @@
         ]
     },
     {
-        "path": "./dart/2.Dart_básico",
+        "path": "section_1",
         "title": "2.Dart básico",
         "description": "",
         "articles": [
             {
-                "path": "./dart/2.Dart_básico/1_Introducción.md",
+                "path": "article_0",
                 "title": "1.Introducción.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/1_Introducción.md",
@@ -52,7 +52,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/2_Método_main.md",
+                "path": "article_1",
                 "title": "2.Método main.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/2_Método_main.md",
@@ -60,7 +60,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/3_Primer_programa.md",
+                "path": "article_2",
                 "title": "3.Primer programa.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/3_Primer_programa.md",
@@ -68,7 +68,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/4_Variables_,_declaración_e_inicialización.md",
+                "path": "article_3",
                 "title": "4.Variables , declaración e inicialización.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/4_Variables_,_declaración_e_inicialización.md",
@@ -76,7 +76,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/5_Tipos_bésicos.md",
+                "path": "article_4",
                 "title": "5.Tipos bésicos.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/5_Tipos_bésicos.md",
@@ -84,7 +84,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/6_Escape_caracteres.md",
+                "path": "article_5",
                 "title": "6.Escape caracteres.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/6_Escape_caracteres.md",
@@ -92,7 +92,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/7_Líneas_múltiples_de_texto.md",
+                "path": "article_6",
                 "title": "7.Líneas múltiples de texto.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/7_Líneas_múltiples_de_texto.md",
@@ -100,7 +100,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/8_Métodos_comunes_en_textos.md",
+                "path": "article_7",
                 "title": "8.Métodos comunes en textos.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/8_Métodos_comunes_en_textos.md",
@@ -108,7 +108,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/9_Inicialización_y_asignación.md",
+                "path": "article_8",
                 "title": "9.Inicialización y asignación.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/9_Inicialización_y_asignación.md",
@@ -116,7 +116,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/10_Contiene_y_reemplazar.md",
+                "path": "article_9",
                 "title": "10.Contiene y reemplazar.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/10_Contiene_y_reemplazar.md",
@@ -124,7 +124,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/11_Conversiones_entre_tipos.md",
+                "path": "article_10",
                 "title": "11.Conversiones entre tipos.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/11_Conversiones_entre_tipos.md",
@@ -132,7 +132,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/12_Operaciones_aritméticas.md",
+                "path": "article_11",
                 "title": "12.Operaciones aritméticas.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/12_Operaciones_aritméticas.md",
@@ -140,7 +140,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/13_Operadores_de_incremento_y_decremento.md",
+                "path": "article_12",
                 "title": "13.Operadores de incremento y decremento.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/13_Operadores_de_incremento_y_decremento.md",
@@ -148,7 +148,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/14_Operadores_lógicos_,_de_igualdad_y_relaciones.md",
+                "path": "article_13",
                 "title": "14.Operadores lógicos , de igualdad y relaciones.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/14_Operadores_lógicos_,_de_igualdad_y_relaciones.md",
@@ -156,7 +156,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/15_Operador_condicional.md",
+                "path": "article_14",
                 "title": "15.Operador condicional.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/15_Operador_condicional.md",
@@ -164,7 +164,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/16_Comentarios.md",
+                "path": "article_15",
                 "title": "16.Comentarios.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/16_Comentarios.md",
@@ -172,7 +172,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/17_Expresiones_y_declaraciones.md",
+                "path": "article_16",
                 "title": "17.Expresiones y declaraciones.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/17_Expresiones_y_declaraciones.md",
@@ -180,7 +180,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/2.Dart_básico/18_Afirmaciones.md",
+                "path": "article_17",
                 "title": "18.Afirmaciones.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_básico/18_Afirmaciones.md",
@@ -190,12 +190,12 @@
         ]
     },
     {
-        "path": "./dart/3.Sistema_de_tipado",
+        "path": "section_2",
         "title": "3.Sistema de tipado",
         "description": "",
         "articles": [
             {
-                "path": "./dart/3.Sistema_de_tipado/1_introducción.md",
+                "path": "article_0",
                 "title": "1.introducción.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/1_introducción.md",
@@ -203,7 +203,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/3.Sistema_de_tipado/2_Lenguajes_estáticos_y_dinámicos.md",
+                "path": "article_1",
                 "title": "2.Lenguajes estáticos y dinámicos.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/2_Lenguajes_estáticos_y_dinámicos.md",
@@ -211,7 +211,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/3.Sistema_de_tipado/3_Inferencia_de_tipo.md",
+                "path": "article_2",
                 "title": "3.Inferencia de tipo.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/3_Inferencia_de_tipo.md",
@@ -219,7 +219,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/3.Sistema_de_tipado/4_final_keyword.md",
+                "path": "article_3",
                 "title": "4.final keyword.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/4_final_keyword.md",
@@ -227,7 +227,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/3.Sistema_de_tipado/5_const_keyword.md",
+                "path": "article_4",
                 "title": "5.const keyword.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/5_const_keyword.md",
@@ -235,7 +235,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/3.Sistema_de_tipado/6_dynamic_keyword.md",
+                "path": "article_5",
                 "title": "6.dynamic keyword.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/6_dynamic_keyword.md",
@@ -245,12 +245,12 @@
         ]
     },
     {
-        "path": "./dart/4.Flujo_de_control",
+        "path": "section_3",
         "title": "4.Flujo de control",
         "description": "",
         "articles": [
             {
-                "path": "./dart/4.Flujo_de_control/1_introducción.md",
+                "path": "article_0",
                 "title": "1.introducción.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/1_introducción.md",
@@ -258,7 +258,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/4.Flujo_de_control/2_if_else.md",
+                "path": "article_1",
                 "title": "2.if else.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/2_if_else.md",
@@ -266,7 +266,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/4.Flujo_de_control/3_while_loop.md",
+                "path": "article_2",
                 "title": "3.while loop.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/3_while_loop.md",
@@ -274,7 +274,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/4.Flujo_de_control/4_for_loop.md",
+                "path": "article_3",
                 "title": "4.for loop.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/4_for_loop.md",
@@ -282,7 +282,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/4.Flujo_de_control/5_break_continue.md",
+                "path": "article_4",
                 "title": "5.break continue.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/5_break_continue.md",
@@ -290,7 +290,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/4.Flujo_de_control/6_switch.md",
+                "path": "article_5",
                 "title": "6.switch.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/6_switch.md",
@@ -298,7 +298,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/4.Flujo_de_control/7_enumerations.md",
+                "path": "article_6",
                 "title": "7.enumerations.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/7_enumerations.md",
@@ -308,12 +308,12 @@
         ]
     },
     {
-        "path": "./dart/5.app_linea_comando",
+        "path": "section_4",
         "title": "5.app linea comando",
         "description": "",
         "articles": [
             {
-                "path": "./dart/5.app_linea_comando/1_Introducción.md",
+                "path": "article_0",
                 "title": "1.Introducción.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/1_Introducción.md",
@@ -321,7 +321,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/2_Dart_sdk.md",
+                "path": "article_1",
                 "title": "2.Dart sdk.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/2_Dart_sdk.md",
@@ -329,7 +329,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/3_VS_Code.md",
+                "path": "article_2",
                 "title": "3.VS Code.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/3_VS_Code.md",
@@ -337,7 +337,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/4_Resúmen_del_juego.md",
+                "path": "article_3",
                 "title": "4.Resúmen del juego.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/4_Resúmen_del_juego.md",
@@ -345,7 +345,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/5_Creando_una_app_en_línea_de_comando.md",
+                "path": "article_4",
                 "title": "5.Creando una app en línea de comando.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/5_Creando_una_app_en_línea_de_comando.md",
@@ -353,7 +353,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/6_pseudo_code_del_juego.md",
+                "path": "article_5",
                 "title": "6.pseudo code del juego.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/6_pseudo_code_del_juego.md",
@@ -361,7 +361,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/7_Obteniendo_user_input.md",
+                "path": "article_6",
                 "title": "7.Obteniendo user input.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/7_Obteniendo_user_input.md",
@@ -369,7 +369,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/8_Implementando_el_loop.md",
+                "path": "article_7",
                 "title": "8.Implementando el loop.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/8_Implementando_el_loop.md",
@@ -377,7 +377,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/5.app_linea_comando/9_Implementando_la_lógica_del_juego.md",
+                "path": "article_8",
                 "title": "9.Implementando la lógica del juego.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/9_Implementando_la_lógica_del_juego.md",
@@ -387,12 +387,12 @@
         ]
     },
     {
-        "path": "./dart/6.Collections",
+        "path": "section_5",
         "title": "6.Collections",
         "description": "",
         "articles": [
             {
-                "path": "./dart/6.Collections/1_Introducción.md",
+                "path": "article_0",
                 "title": "1.Introducción.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/1_Introducción.md",
@@ -400,7 +400,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/2_Lists.md",
+                "path": "article_1",
                 "title": "2.Lists.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/2_Lists.md",
@@ -408,7 +408,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/3_List_methods.md",
+                "path": "article_2",
                 "title": "3.List methods.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/3_List_methods.md",
@@ -416,7 +416,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/4_Type_annotations.md",
+                "path": "article_3",
                 "title": "4.Type annotations.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/4_Type_annotations.md",
@@ -424,7 +424,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/5_var_final_const_with_lists.md",
+                "path": "article_4",
                 "title": "5.var final const with lists.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/5_var_final_const_with_lists.md",
@@ -432,7 +432,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/6_Sets.md",
+                "path": "article_5",
                 "title": "6.Sets.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/6_Sets.md",
@@ -440,7 +440,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/7_Maps.md",
+                "path": "article_6",
                 "title": "7.Maps.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/7_Maps.md",
@@ -448,7 +448,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/8_Type_test_operators.md",
+                "path": "article_7",
                 "title": "8.Type test operators.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/8_Type_test_operators.md",
@@ -456,7 +456,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/9_Iterating_on_maps.md",
+                "path": "article_8",
                 "title": "9.Iterating on maps.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/9_Iterating_on_maps.md",
@@ -464,7 +464,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/10_Nested_collections.md",
+                "path": "article_9",
                 "title": "10.Nested collections.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/10_Nested_collections.md",
@@ -472,7 +472,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/11_Nuevos_operadores_y_statements.md",
+                "path": "article_10",
                 "title": "11.Nuevos operadores y statements.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/11_Nuevos_operadores_y_statements.md",
@@ -480,7 +480,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/6.Collections/12_Copiando_colecciones.md",
+                "path": "article_11",
                 "title": "12.Copiando colecciones.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/6.Collections/12_Copiando_colecciones.md",
@@ -490,12 +490,12 @@
         ]
     },
     {
-        "path": "./dart/7.Procesamiento_de_datos",
+        "path": "section_6",
         "title": "7.Procesamiento de datos",
         "description": "",
         "articles": [
             {
-                "path": "./dart/7.Procesamiento_de_datos/1_Introducción.md",
+                "path": "article_0",
                 "title": "1.Introducción.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/1_Introducción.md",
@@ -503,7 +503,7 @@
                 "published": ""
             },
             {
-                "path": "./dart/7.Procesamiento_de_datos/2_Parseando_argumentos_desde_linea_de_comando.md",
+                "path": "article_1",
                 "title": "2.Parseando argumentos desde linea de comando.md",
                 "description": "",
                 "contentUrl": "https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/2_Parseando_argumentos_desde_linea_de_comando.md",

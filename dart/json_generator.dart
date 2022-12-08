@@ -28,7 +28,7 @@ Future<List<dynamic>> createDartCourse() async {
   }
 
   // Save '.md' files in directory
-  final directoriesList = [];
+  final sections = [];
   for (var directory in directories) {
     final articles = [];
     final directoryNameWithUnderscore =
@@ -70,8 +70,10 @@ Future<List<dynamic>> createDartCourse() async {
     }
 
     articles.sort(((a, b) => orderList(a, b)));
-
-    directoriesList.add({
+    for (var i = 0; i < articles.length; i++) {
+      articles[i]['path'] = 'article_$i';
+    }
+    sections.add({
       'path': directory.path,
       'title': directoryName,
       'description': '',
@@ -79,8 +81,11 @@ Future<List<dynamic>> createDartCourse() async {
     });
   }
 
-  directoriesList.sort((a, b) => orderList(a, b));
-  return directoriesList;
+  sections.sort((a, b) => orderList(a, b));
+  for (var i = 0; i < sections.length; i++) {
+    sections[i]['path'] = 'section_$i';
+  }
+  return sections;
 }
 
 int orderList(a, b) {
