@@ -1,11 +1,5 @@
 import 'dart:io';
 
-extension StringExtension on String {
-  String capitalize() {
-    return "${this[0].toUpperCase()}${this.substring(1).toLowerCase()}";
-  }
-}
-
 // 'contentUrl':
 //     'https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.1_sacar_provecho_del_curso.md',
 void main() async {
@@ -60,10 +54,15 @@ void main() async {
             'author': 'Mau Di Bert',
             'published': '',
           });
-          // mdFiles.add(entity as File);
         }
       }
     }
+
+    articles.sort(((a, b) {
+      final aDouble = double.parse((a['title']).split(' ').first);
+      final bDouble = double.parse((b['title']).split(' ').first);
+      return aDouble.compareTo(bDouble);
+    }));
 
     directoriesList.add({
       'path': directory.path,
@@ -71,10 +70,6 @@ void main() async {
       'description': '',
       'articles': articles,
     });
-
-    // directoriesMap[directory.path] = {
-    //   'articles': mdFiles,
-    // };
   }
 
   // final orderedDirectoriesMap = Map.fromEntries(directoriesMap.entries.toList()
