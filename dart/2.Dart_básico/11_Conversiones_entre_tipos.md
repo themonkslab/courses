@@ -11,7 +11,7 @@ void main() {
 
 Exacto! No! Ya que no podemos asignar un valor del tipo `int` a uno del tipo `String`. Para ello, debemos convertirlo con un método propio. Fíjense qué cosas interesantes podemos descubrir en Dartpad cuando completamos '.to' y leemos los métodos que nos sugiere:
 
-![Método toString](2.11.1_tipo_de_retorno.png)
+![Método toString](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/11.1_tipo_retorno.png)
 
 En la captura podemos ver una flecha junto al método: significa qué valor retornará dicho método. Eso quiere decir que si nosotros declaramos una variable y la inicializamos con un método, el retorno de dicho método quedará como valor de dicha variable.
 

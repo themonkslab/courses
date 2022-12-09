@@ -68,7 +68,7 @@ Cada ejercicio se va a componer de un _requirement_ y una o varias soluciones pr
 
 __Requirement__: almacenar variables para luego imprimirlas de forma tal que la consola muestre algo como la siguiente imagen y que utilicen para componer el nombre completo, una variable para el primer nombre, una variable para el segundo (si lo tuvieran) y una variable para el apellido; utilicen sus propios nombres y datos:
 
-![Consola debería mostrar algo así](2.5.e.1_a_imprimir_variables.png)
+![Consola debería mostrar algo así](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/5.e.1_a_imprimir_variables.png)
 
 __💀 Solución__:
 

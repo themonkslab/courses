@@ -24,11 +24,11 @@ void main() {
 
 Qué pudieron ver en _Dartpad_? Algo así?
 
-![Falta punto y coma](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.3.1_falta_punto_y_coma.png)
+![Falta punto y coma](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/3.1_falta_punto_y_coma.png)
 
 Prueben correr el programa sin solucionar el error como _Dartpad_ se los recomienda.
 
-![Programa no corre](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.3.2_programa_no_corre_falta_punto_y_coma.png)
+![Programa no corre](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/3.2_programa_no_corre_falta_punto_y_coma.png)
 
 En este caso, pudieron ver que no tuvimos que crear ningún test para asegurarnos de que la línea tiene que estar escrita de cierta manera, siguiendo [ciertas reglas](https://dart.dev/guides/language/language-tour)?: Dart lo hace él mismo.
 
@@ -48,11 +48,11 @@ Así, agrega espacios para indicar más claramente que un pedazo de código est�
 
 Prueben también qué sucede si borran esos espacios y lo corren. Pudieron ver que funciona perfectamente salvo que es apenas más difícil de leer? Y ustedes dirán 'son dos espacios, no es más difícil'. Pero compruébenlo ustedes mismos: qué código les parece más fácil y placentero de ver? 🤨
 
-![Formato o no formato](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.3.4_no_formateado_vs_formateado.png)
+![Formato o no formato](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/3.4_no_formateado_vs_formateado.png)
 
  y luego hacen click en _Format_ y voilà!
 
-![Formato automático de Dart](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.3.3_formato.png)
+![Formato automático de Dart](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/3.3_formato.png)
 
 ## Tests?
 

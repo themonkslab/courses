@@ -4,7 +4,7 @@
 
 Un programa de Dart es válido solamente si contiene un método main. Sino, prueben borrar todo y ver lo que aparece en consola. Probaron? 😒 ... 😏 ... 🧐:
 
-![Método main no encontrado](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.2.1_metodo_main_no_encontrado.png)
+![Método main no encontrado](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/2.1_metodo_main_no_encontrado.png)
 
 El método main es __también llamado _entry point_ o punto de entrada__ de nuestro programa y es el que va a recibir todo nuestro código.
 
@@ -18,7 +18,7 @@ void main() {
 
 Ah! Y qué es ese bloque de texto que aparece con colores? En lugar ahora de mostrarles una imagen, les mostramos este __bloque de código__: pueden copiarlo y pegarlo fácilmente aunque ya saben que eso no les va a enseñar nada 🥸: para aprender tienen que escribir ustedes mismos cada letra de cada código. Sin embargo, les queríamos mostrar esto porque a futuro, si ustedes suben código para que alguien más lo vea, por ejemplo en algún ejercicio o en su trabajo, es recomendable hacerlo así para que quien pruebe su código, pueda correrlo fácilmente solo mediante copiar y pegar. Sino, imagínense que quien quiera ayudarlos tiene que copiar miles de líneas además de encontrar cómo darles una mano! 🤣
 
-![Método main escrito, no más problemas!](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.2.2_main_sin_problemas.png)
+![Método main escrito, no más problemas!](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/2.2_main_sin_problemas.png)
 
 ## TDD o nuestra forma particular de enseñarnos
 

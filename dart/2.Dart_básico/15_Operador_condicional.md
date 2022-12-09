@@ -48,7 +48,7 @@ Retorna un `bool`! Pero nosotros queremos imprimir en la consola algún mensaje 
 
 Traducido como operador condicional o ternario, nos permite __evaluar una expresión como verdadera o falsa y retornar la expresión que queramos__ , siempre y cuando sean del mismo tipo. Conceptualmente, veríamos algo así:
 
-![Operador ternario](2.15.1_operador_ternario.png)
+![Operador ternario](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/15.1_operador_ternario.png)
 
 Parecería que nos viene como anillo al dedo para terminar nuestro pequeño programa. 💀 Estoy absolutamente convencido que antes de ver cómo quedaría el programa terminado, quieren intentarlo ustedes mismos!
 

@@ -38,7 +38,7 @@ void main() {
 
 Además, __los editores de código pueden enriquecer cómo los comentarios se ven__, sumar extensiones para hacer cosas específicas con ellos, etc. Les dejo para que vean comentarios dentro de una documentación de _Flutter_:
 
-![Comentarios en una documentación](2.16.1_comentarios_vida_real.png)
+![Comentarios en una documentación](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/16.1_comentarios_vida_real.png)
 
 Para terminar con estos comentarios de línea simple, podría agregarles que también sirven cuando quieren omitir alguna operación, variable o lo que necesiten. En el siguiente ejemplo, podemos ver cómo omitimos temporalmente el código `print('Program started');`.
 

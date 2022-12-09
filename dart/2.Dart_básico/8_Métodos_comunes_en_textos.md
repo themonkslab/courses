@@ -11,11 +11,11 @@ void main() {
 
 Hasta aquí, nada nuevo. Cómo haríamos sin embargo, para transformar ese título a mayúsculas, sin hacerlo cambiando cada caracter?
 
-Si nos paramos junto a la variable y añadimos un punto, vamos a ver en nuestro Dartpad, un listado de métodos que los `String` contienen: ![Métodos de `String`](2.8.1_metodos_de_textos.png)
+Si nos paramos junto a la variable y añadimos un punto, vamos a ver en nuestro Dartpad, un listado de métodos que los `String` contienen: ![Métodos de `String`](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/8.1_metodos_textos.png)
 
 Si luego introducimos la palabra _'to'_, vamos a ver que la lista de operaciones se reduce a tres:
 
-![Tres métodos con 'to'](2.8.2_tres_metodos_con_to.png)
+![Tres métodos con 'to'](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/8.2_tres_metodos_to.png)
 
 Allí, simplemente bajamos con la flecha hasta donde dice _'toUpperCase'_ o 'a mayúsculas' y damos en la tecla 'tab' o en la tecla 'enter' para autocompletar. Así entonces, nos encontramos con una expresión que convierte todos los caracteres del contenido de la variable `title`, a mayúsculas. Prueben correr el código para ver que funcione!
 

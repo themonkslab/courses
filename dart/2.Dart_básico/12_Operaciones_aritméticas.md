@@ -41,7 +41,7 @@ void main() {
 
 Sin embargo, en este último caso, descubrimos un subrayado nuevo a los anteriores (rojos y azules), el subrayado amarillo: nos advierte mediante una advertencia, que el valor no puede ser nulo:
 
-![Subrayado amarillo](2.12.1_subrayado_amarillo.png)
+![Subrayado amarillo](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.Dart_b%C3%A1sico/12.1_subrayado_amarillo.png)
 
 ### Mezclando lo anterior con _compound assignment operators_
 
