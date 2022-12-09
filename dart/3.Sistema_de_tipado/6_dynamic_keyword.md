@@ -15,7 +15,7 @@ Ya vimos todas las ventajas que nos trae el tipado de Dart, __porqué habríamos
 
 En casos muy específicos como cuando trabajemos con archivos del tipo _json_ y no sepamos qué contenido va a tener cada variable, se nos hará muy útil utilizar _keyword_:
 
-```json
+```dart
 {
     "employee": {
         "name": "Mau Di Bert",
