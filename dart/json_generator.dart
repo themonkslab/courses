@@ -56,9 +56,13 @@ Future<List<dynamic>> createDartCourse() async {
               'https://raw.githubusercontent.com/themonkslab/courses/main';
 
           final contentUrl = entity.path.replaceFirst('.', baseContentUrl);
+          final articlePath = entity.path
+              .replaceFirst('./dart/', '')
+              .replaceAll('/', '_')
+              .replaceAll('.md', '');
 
           articles.add({
-            'path': entity.path,
+            'path': articlePath,
             'title': articleName,
             'description': '',
             // example: https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.2_que_esperamos_nosotros.md
@@ -71,11 +75,12 @@ Future<List<dynamic>> createDartCourse() async {
     }
 
     articles.sort(((a, b) => orderList(a, b)));
-    for (var i = 0; i < articles.length; i++) {
-      articles[i]['path'] = 'article_$i';
-    }
+    // for (var i = 0; i < articles.length; i++) {
+    //   articles[i]['path'] = 'article_$i';
+    // }
+    final sectionPath = directory.path.replaceFirst('./dart/', '');
     sections.add({
-      'path': directory.path,
+      'path': sectionPath,
       'title': directoryName,
       'description': '',
       'articles': articles,
@@ -83,9 +88,9 @@ Future<List<dynamic>> createDartCourse() async {
   }
 
   sections.sort((a, b) => orderList(a, b));
-  for (var i = 0; i < sections.length; i++) {
-    sections[i]['path'] = 'section_$i';
-  }
+  // for (var i = 0; i < sections.length; i++) {
+  //   sections[i]['path'] = 'section_$i';
+  // }
   return sections;
 }
 

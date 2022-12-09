@@ -87,7 +87,7 @@ _debe ser asignada antes de ser utilizada_: le tenemos que proveer un valor, un 
 
 Inicializar una variable es, __luego de que la variable ha sido declarada, ponerle un valor dentro__. Para hacerlo, utilizamos el siguiente orden, relación de palabras o _sintáxis_:
 
-![Declaración e inicialización](2.4.2_declarar_e_inicializar.png)
+![Declaración e inicialización](https://raw.githubusercontent.com/themonkslab/courses/main/dart/2.4.2_declarar_e_inicializar.png)
 
 En este caso, estamos hablando de una caja o _variable_ que almacenará una cadena de caracteres y la adecuada para este tipo de valores es un _String_.
 
