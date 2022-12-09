@@ -2,7 +2,7 @@
 
 Para entender qué diferencia hay entre uno y otro, vamos a ver qué sucede cuando escribimos un código:
 
-![Proceso desde el código fuente](3.2.1_estaticos_dinamicos.png)
+![Proceso desde el código fuente](https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/2.1_estaticos_dinamicos.png)
 
 __Lo primero__ que hacemos es introducir un __código fuente o _source code_;__ sería lo que por ejemplo nosotros hacemos cuando escribimos `main(){...aquí...}`
 
@@ -12,7 +12,7 @@ __Finalmente se ejecuta__ y __como resultado__ vemos una __aplicación o una web
 
 Un lenguaje que es _statically typed_, chequea los tipos en el momento de compilación o _compile time_. Cómo podemos ver esto y qué significa en la práctica?
 
-![Errores al compilar](3.2.2_errores_al_compilar.png)
+![Errores al compilar](https://raw.githubusercontent.com/themonkslab/courses/main/dart/3.Sistema_de_tipado/2.2_errores_al_compilar.png)
 
 Aquí podemos ver que si declaramos una variable del tipo `int` luego no podemos asignarle un valor que sea de otro tipo, por ejemplo uno del tipo `String`, como vemos en el ejemplo.
 

@@ -64,7 +64,7 @@ Ahora sí tenemos que implementar el movimiento de la computadora y para ello, u
 
 Justo en la primer línea luego y dentro del `main`, creamos la variable `final rng` y le asignamos un valor de `Random()`. Van a ver que Dart les dice que no conoce dicho nombre pero ustedes ya saben qué hacer! `Cmd/ctrl + .` (llamada _magic wand_ o varita mágica) y elijan importar `dart:math`. También, recuerden que pueden ver la documentación haciendo _hover_ (situando el cursor arriba) no solo de la librería sino también de ese método específico:
 
-![_Random number generator_](5.9.1_random_number_generator.gif)
+![_Random number generator_](https://raw.githubusercontent.com/themonkslab/courses/blob/main/dart/5.app_linea_comando/5.9.1_random_number_generator.gif)
 
 Ya tenemos nuestro generador de número aleatorio y ahora vamos a utilizarlo creando la variable para el número aleatorio (`final randomNumber`) y haciendo uso del generador para asignarle su valor (`rng.nextInt(3)`). Pueden observar tres cosas:
 
@@ -72,7 +72,7 @@ Ya tenemos nuestro generador de número aleatorio y ahora vamos a utilizarlo cre
 2. Ustedes dirán 'si son tres los movimientos posibles, por qué el máximo es 3 siendo que no lo incluye y el mínimo es 0'? Porque vamos a trabajar con listas (que ya veremos en el próximo capítulo en detalle) y dichas listas cuentan sus elementos empezando por cero, y se los asignan de forma implícita para que podamos llamarlos por dicho valor (_index_).
 3. Pueden ingresar dentro de la documentación con `cmd/ctrl + click`. Es algo súper útil para entender cómo funciona ese método o librería y aprender mucho más. Dart y Flutter tienen una de las mejores documentaciones por lo que anímense a meterse dentro!
 
-![Creando número aleatorio](5.9.2_creando_numero_aleatorio.gif)
+![Creando número aleatorio](https://raw.githubusercontent.com/themonkslab/courses/blob/main/dart/5.app_linea_comando/5.9.2_creando_numero_aleatorio.gif)
 
 Ahora, teniendo en cuenta lo aprendido en al punto dos anterior, vamos a implementar el movimiento de la computadora. Como dijimos, vamos a utilizar una lista. Qué lista? La que sale de llamar a nuestro _enum_ y accediendo a sus valores. Así: `Move.values`. Allí tenemos la lista pero queremos acceder a alguno de sus tres posibles movimientos y para ello, basta con abrir `[ ]` que es la forma de acceder a los valores mediante _index_  de una lista y ponemos allí dentro el número _random_ que generamos: `More.values[randomNumber];`. Todo junto se vería así:
 

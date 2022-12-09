@@ -33,7 +33,7 @@ Empecemos por escribir cuál es la función que necesitamos que Dart nos ayudar�
 
 Situen el cursor encima de dicho nombre, y presionen las teclas `cmd/ctrl + .` y se les va a abrir un menú de ayuda. Allí seleccionan `Import library dart:io`. Dart se encargó de hacer el import de dicha librereia por nosotros y van a ver que ya no hay ningún fallo:
 
-![Importando dart:io](5.7_importando_dart_io.gif)
+![Importando dart:io](https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/5.7_importando_dart_io.gif)
 
 Además, __si se paran encima de ese `import` (y esto es algo que constantemente pueden probar), van a poder ver una documentación de dicha librería__, con las funciones y utilidades más comunes. Súper útil!
 

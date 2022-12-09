@@ -24,7 +24,7 @@ void main(List<String> arguments) {
 
 Estamos creando un programa que recibe una lista de argumentos del tipo `String` para luego imprimirlos. 💀 Vayan a guardar ya mismo ese programa y córranlo así: `dart counting_calories.dart Mis argumentos!`. Qué creen que sucederá?
 
-![Imprimiendo arguments](7.2.2_imprimiendo_argumentos.png)
+![Imprimiendo arguments](https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/2.2_imprimiendo_argumentos.png)
 
 Interesante no? Bien! Ahora, como vamos a necesitar de forma obligatoria un archivo para luego procesar, este programa no puede ejecutarse sin introducir el _path_ de ese archivo como argumento. Qué les parece si prevenimos al usuario de ello?
 

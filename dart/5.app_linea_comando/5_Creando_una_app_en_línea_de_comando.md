@@ -16,8 +16,8 @@ A partir de ahora, van a poder abrir VS Code escribiendo `code` desde su termina
 
 Una vez allí, vamos a crear nuestro primer archivo o _file_:
 
-![Creando el archivo](5.5.2.crear_archivo_1.png)
-![Nombrando el archivo](5.5.3.crear_archivo_2.png)
+![Creando el archivo](https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/5.2.crear_archivo_1.png)
+![Nombrando el archivo](https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/5.3.crear_archivo_2.png)
 
 Una vez en su nuevo y flamante primer programa para línea de commando o _command line_, escriban un `print` para saludar a todos!
 
@@ -33,7 +33,7 @@ Listo, ya tenemos nuestro primer programa! Ahora... cómo lo ejecutan? Presionen
 2. Cuando cambie a una flecha, hagan click y manteniendo,
 3. Arrastren hacia arriba.
 
-![Abrir terminal con el cursor](5.5.4.abrir_terminal_cursor.gif)
+![Abrir terminal con el cursor](https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/5.4.abrir_terminal_cursor.gif)
 
 Una vez en la terminal, escriban `dart` y luego el nombre de su programa (recuerden que pueden escribir las primeras letras y autocompletar con tab) y cuando lo tengan, den `enter`.
 

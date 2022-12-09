@@ -59,7 +59,7 @@ void main() {
 
 Así, definimos un tipo `Medal` que __tiene mucho significado y todo nuestro código se vuelve más fácil de entender__. Además, podemos __utilizar las ayudas__ que nos provee Dartpad en este caso:
 
-![Ayuda en enums](4.7.1_ayuda_enums.png)
+![Ayuda en enums](https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/7.1_ayuda_enums.png)
 
 ## 💪 Lluvia de enums
 

@@ -40,4 +40,4 @@ void main() {
 
 Deberían ver algo como esto:
 
-![_Loop_ implementado](5.8.1_loop_implementado.gif)
+![_Loop_ implementado](https://raw.githubusercontent.com/themonkslab/courses/main/dart/5.app_linea_comando/5.8.1_loop_implementado.gif)

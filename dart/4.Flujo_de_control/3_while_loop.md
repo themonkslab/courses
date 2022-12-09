@@ -45,7 +45,7 @@ Logramos el mismo resultado pero con un poquito más de clase 🧐😵‍💫�
 
 __Requirement__: Imprimir la siguiente figura:
 
-![Mario exercise](4.3.1_mario.png)
+![Mario exercise](https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/3.1_mario.png)
 
 __Clue__ (pista): pueden concatenar una `String` la cantidad de veces (N) que quieran (_String multiplication_) así: 'string' * N.
 
@@ -66,4 +66,4 @@ void main() {
 
 Si quisiéramos hacer un diagrama de los _while loop_ se vería así:
 
-![Diagrama while loop](4.3.2_while_diagrama.png)
+![Diagrama while loop](https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/3.2_while_diagrama.png)

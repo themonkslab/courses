@@ -24,7 +24,7 @@ Así, lo que está dentro del bucle (dentro de las `{...aquí...}`) se ejecutar�
 
 Tendríamos de esta manera un diagrama parecido al anterior solo que en este caso nuestro _for loop_ pide de forma explicita la actualización (incrementación en este caso) de la variable inicializada:
 
-![Diagrama for loop](4.4.1_for_loop_diagrama.png)
+![Diagrama for loop](https://raw.githubusercontent.com/themonkslab/courses/main/dart/4.Flujo_de_control/4.1_for_loop_diagrama.png)
 
 ## 💪 Fizz buzz
 
