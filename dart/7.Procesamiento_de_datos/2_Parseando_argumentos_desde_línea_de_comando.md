@@ -2,7 +2,7 @@
 
 Creo que ya dijimos que parsear significa analizar y convertir un valor en otro, típicamente de formato interno, un valor que podamos utilizar para nuestros fines específicos.
 
-Bien, aquí lo que vamos a crear es un programa que nos permita leer un archivo `.csv`, parsearlo para convertirlo a valores que podamos utilizar, hacer algo útil con ellos y finalmente mostrarnos el resultado esperado!
+Bien, aquí lo que vamos a crear es un programa que nos permita leer un archivo `.md`, parsearlo para convertirlo a valores que podamos utilizar, hacer algo útil con ellos y finalmente mostrarnos el resultado esperado!
 
 Empecemos recordando cómo crear un proyecto en Dart y nuestro primer archivo:
 
@@ -10,7 +10,7 @@ Empecemos recordando cómo crear un proyecto en Dart y nuestro primer archivo:
 2. Creen un directorio para este proyecto: `mkdir data_processing`.
 3. Entren a dicho directorio: `cd data_processing` (recuerden que pueden utilizar la tecla `tab` para autocompletar).
 4. Abran una nueva instancia de VSCode dentro: `code .`.
-5. Creen un nuevo archivo llamado `counting_calories.dart`.
+5. Creen un nuevo archivo llamado `data_processing.dart`.
 
 Una vez allí, lo que queremos hacer ahora, es crear un programa para línea de comandos que reciba un argumento que represente el lugar o _path_ en donde se encuentra nuestro archivo a procesar para luego poder hacer algo con el.
 
@@ -22,7 +22,7 @@ void main(List<String> arguments) {
 }
 ```
 
-Estamos creando un programa que recibe una lista de argumentos del tipo `String` para luego imprimirlos. 💀 Vayan a guardar ya mismo ese programa y córranlo así: `dart counting_calories.dart Mis argumentos!`. Qué creen que sucederá?
+Estamos creando un programa que recibe una lista de argumentos del tipo `String` para luego imprimirlos. 💀 Vayan a guardar ya mismo ese programa y córranlo así: `dart data_processing.dart Mis argumentos!`. Qué creen que sucederá?
 
 ![Imprimiendo arguments](https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/2.2_imprimiendo_argumentos.png)
 
@@ -31,7 +31,7 @@ Interesante no? Bien! Ahora, como vamos a necesitar de forma obligatoria un arch
 ```dart
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Usage: dart counting_calories.dart <inputFile.csv>');
+    print('Usage: dart data_processing.dart <inputFile.md>');
   } else {
     print(arguments);
   }
@@ -43,7 +43,7 @@ Sin embargo el programa debiera terminar automáticamente cuando lo corremos sin
 ```dart
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Usage: dart counting_calories.dart <inputFile.csv>');
+    print('Usage: dart data_processing.dart <inputFile.md>');
     exit(1);
   }
   print(arguments);
@@ -55,7 +55,7 @@ Finalmente podemos guardar nuestro _path_ del archivo o _input file_ y que eso s
 ```dart
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Usage: dart counting_calories.dart <inputFile.csv>');
+    print('Usage: dart data_processing.dart <inputFile.md>');
     exit(1);
   }
   final inputFile = 
