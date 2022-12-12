@@ -2,7 +2,7 @@
 
 Creo que ya dijimos que parsear significa analizar y convertir un valor en otro, típicamente de formato interno, un valor que podamos utilizar para nuestros fines específicos.
 
-Bien, aquí lo que vamos a crear es un programa que nos permita leer un archivo `.md`, parsearlo para convertirlo a valores que podamos utilizar, hacer algo útil con ellos y finalmente mostrarnos el resultado esperado!
+Bien, aquí lo que vamos a crear es un programa que nos permita leer un archivo `.csv`, parsearlo para convertirlo a valores que podamos utilizar, hacer algo útil con ellos y finalmente mostrarnos el resultado esperado!
 
 Empecemos recordando cómo crear un proyecto en Dart y nuestro primer archivo:
 
@@ -31,7 +31,7 @@ Interesante no? Bien! Ahora, como vamos a necesitar de forma obligatoria un arch
 ```dart
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Usage: dart data_processing.dart <inputFile.md>');
+    print('Usage: dart data_processing.dart <inputFile.csv>');
   } else {
     print(arguments);
   }
@@ -43,7 +43,7 @@ Sin embargo el programa debiera terminar automáticamente cuando lo corremos sin
 ```dart
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Usage: dart data_processing.dart <inputFile.md>');
+    print('Usage: dart data_processing.dart <inputFile.csv>');
     exit(1);
   }
   print(arguments);
@@ -55,7 +55,7 @@ Finalmente podemos guardar nuestro _path_ del archivo o _input file_ y que eso s
 ```dart
 void main(List<String> arguments) {
   if (arguments.isEmpty) {
-    print('Usage: dart data_processing.dart <inputFile.md>');
+    print('Usage: dart data_processing.dart <inputFile.csv>');
     exit(1);
   }
   final inputFile = 
