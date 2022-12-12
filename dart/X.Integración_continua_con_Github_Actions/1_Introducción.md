@@ -2,7 +2,7 @@
 
 @EugenioTesio
 
-El proceso de integración contínua también conocido por las sigas __CI/CD (continuos integration / continuos development)__ es un mecanizmo utilizado para ejecutar trabajos automáticos en relación a la porción de código que se está subiendo a nuestro repositorio de códido a través de un git push. Estos trabajos van desde auditorías del código (formato, identación, máxima cantidad de caracteres por línea, etc), ejecución de test y/o ejecución de acciones (enviar un mail, un mensaje de Slack, ejecutar un request a una API, etc).
+El proceso de integración contínua también conocido por las sigas __CI/CD (continuos integration / continuos development)__ es un mecanismo utilizado para ejecutar trabajos automáticos en relación a la porción de código que se está subiendo a nuestro repositorio de códido a través de un git push. Estos trabajos van desde auditorías del código (formato, identación, máxima cantidad de caracteres por línea, etc), ejecución de test y/o ejecución de acciones (enviar un mail, un mensaje de Slack, ejecutar un request a una API, etc).
 
 La secuencia de trabajos, __pipeline__, varia mucho de acuerdo al leguaje de programación y al ambiente al cual se pushea el código. No es lo mismo subir un código al repositorio de desarrollo que hacerlo al de producción, este úlimo necesita mucho más controles e inclusive tener automatizado el despligue del mismo a los servidores de producción o la generación de compilado de la aplicación para poder subir a las tiendas (Google Play, App Store, Microsoft Apps) donde será publicado.
 
