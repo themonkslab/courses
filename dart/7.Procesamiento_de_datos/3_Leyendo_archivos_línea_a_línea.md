@@ -33,11 +33,11 @@ Qué buena onda! Ya podemos leer un archivo que le pasemos a nuestro programa y 
 
 En este caso, sabemos que vamos a subir un archivo que tengamos, sabemos su nombre, etc. 💀 __Qué sucedería sin embargo, si introducimos el nombre de un archivo que no existe?__  Ya saben qué hacer! Vayan a probar y romper! 🤣
 
-![Error horroroso](./3.2_error_horroroso.png)
+![Error horroroso](https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/3.2_error_horroroso.png)
 
 Esos errores, al principio, pueden darnos mucho miedo! 🧟‍♂️ Pero si lo tomamos con calma y tratamos de entenderlo línea por línea, la cosa cambia, ya que si bien no vamos a entender siempre cada línea, nos basta con aquellas que nos dirijan a la solución de nuestro error. Ah! __Importante: siempre empezar leyendo errores desde la primera línea, de arriba hacia abajo y de izquierda a derecha__:
 
-![Error horroroso](./3.3_como_entender_el_error.png)
+![Error horroroso](https://raw.githubusercontent.com/themonkslab/courses/main/dart/7.Procesamiento_de_datos/3.3_como_entender_el_error.png)
 
 Aquí podemos ver el _stack trace_ de nuestro error o la __pila de procesos__, uno arriba del otro, __desde la última manifestación del fallo hasta el proceso que lo provocó__.
 
