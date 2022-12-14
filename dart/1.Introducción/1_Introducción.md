@@ -1,10 +1,12 @@
-# La verdadera intro
+# Introducción
 
 @Mau Di Bert
 
 Creemos que si estás acá, es porque estás interesado o interesada en volverte un/a profesional al nivel requerido para trabajar en Estados Unidos y Europa.
 
 Para ello, preparamos un camino de aprendizaje pensado de atrás hacia adelante: __vas a aprender a testear como primer paso__, de manera que escribir código de alta calidad sea una extensión de tu cuerpo y puedas __destinar tiempo a lo más divertido, crear__.
+
+Lo más probable, es que estés también aquí porque te interesa aprender [Flutter](https://flutter.dev) y estás en el lugar indicado: para aprender cualquier _Framework_ (marco de trabajo que tiene como objetivo facilitar la solución de problemas que pueden surgir al programar), es imprescindible comprender en profundidad el lenguaje en el que está construido y es por esto que nuestro primer paso para aprender Flutter, es aprender Dart.
 
 ## Comunidad
 
