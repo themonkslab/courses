@@ -26,4 +26,4 @@ void main() {
 }
 ```
 
-_The operator '+' can't be unconditionally invoked because the receiver can be 'null'._ Nos dice que el operador no puede ser invocado porque quien lo recibe puede ser nulo!
+_The operator '+' can't be unconditionally invoked because the receiver can be 'null'._ Nos dice que el operador no puede ser invocado porque quien lo recibe puede ser nulo, ya que en ese momento de la ejecución de nuestro programa `x` puede seguir siendo nulo (y de hecho lo es) por lo que Dart salva nuestras vidas, avisándonos y lanzando un error antes de que podamos cometer cualquier atrocidad con él! 🤣
