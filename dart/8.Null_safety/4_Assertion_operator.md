@@ -72,3 +72,43 @@ void main() {
 Ya verán que en este caso, no nos salta ningún tipo de error y esto es porque nosotros le dijimos a Dart 'quedate tranquilo que sabemos lo que hacemos'. Debido a que en este caso somos nosotros los que estamos en control, realmente tienen que estar seguros de lo que hacen!
 
 Y qué sucede cuando creen uno está absolutamente seguro pero resulta que algo en el proceso no era exactamente como lo previmos y llega a ese lugar y el valor resulta ser nulo? 💥 Baaaang! Explota todo! 🤣 Y por esta razón es que a este operador también se lo llama el _bang operator_!
+
+## Cuándo utilizar ! y cuando ??
+
+La idea es que utilicen el `??` si tienen un valor por defecto o alternativo en caso de que el valor sea nulo y utilicen el `!` solamente si están ciento por ciento seguros de que a _runtime_, ese valor no será nulo.
+
+## _Augmented assignment if-null operator_
+
+Whaaaat!? 🤣 Suena muy complejo y _fancy_ (elegante) pero en realidad es muy simple: sirve para asignar un valor solo si ese valor es nulo.
+
+Supongamos que en el ejemplo que venimos trabajando queremos corregir el valor del bono una vez que pueda haber sido asignado. 😒 Sí, entiendo que es un poco rebuscado pero en sus propios programas encontrarán mejores casos de uso 😂! Podríamos hacer algo así:
+
+```dart
+void main() {
+  const cart = 5001;
+  double? maybeBonus;
+  if (cart > 5000) {
+    maybeBonus = 500;
+  }
+  maybeBonus ??= 1000;
+  double bonus =
+      maybeBonus!;
+  print('You have a bonus of $bonus');
+}
+```
+
+Ahora y para finalizar, van a ver que Dartpad les muestra un _warning_ o advertencia diciendo que `maybeBonus` no puede ser nulo jamás ya que lo hemos asignado con anterioridad! Muy inteligente y útil! Así que el ejemplo sin _warnings_ sería el siguiente:
+
+```dart
+void main() {
+  const cart = 5001;
+  double? maybeBonus;
+  if (cart > 5000) {
+    maybeBonus = 500;
+  }
+  maybeBonus ??= 1000;
+  double bonus =
+      maybeBonus; // 💃🏼 nota de atención otra vez! 🤣
+  print('You have a bonus of $bonus');
+}
+```
