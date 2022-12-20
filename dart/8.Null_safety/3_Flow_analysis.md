@@ -153,3 +153,20 @@ void main() {
   }
 }
 ```
+
+Aunque para serles sinceros, nunca tuve el deseo real de terminar este artículo! Aun podríamos hacer ese código anterior más bello y simple! Cómo? Utilizando el...
+
+## _Conditional access operator_
+
+Este operador de acceso condicional, nos permite llamar a una función, método o propiedad de un valor solo si el valor no es nulo y nuevamente utilizamos nuestro querido `?`, de esta manera:
+
+```dart
+void main() {
+  const hardware = <String?>['Mouse', 'Keyboard', null];
+  for (var hardwarePiece in hardware) {
+    print(hardwarePiece?.toUpperCase());
+  }
+}
+```
+
+Ahora podemos ver que ya no tenemos error y que imprime nuestros valores, aunque también para ser sinceros, imprime el valor `null`. Por qué sucede esto? Porque nosotros estamos llamando al método solo si el valor no es nulo; si el valor es nulo, ese método es como si no existiera y solo nos queda el valor nulo, el `null` y es esto lo que imprime.
