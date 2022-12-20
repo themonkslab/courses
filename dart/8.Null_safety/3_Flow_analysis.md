@@ -4,9 +4,9 @@ Volvamos al ejemplo anterior y en lugar de inicializar la variable `x` como nula
 
 ```dart
 void main() {
-    int? x;
-    int y = 5;
-    print(x + y);
+  int? x;
+  int y = 5;
+  print(x + y);
 }
 ```
 
@@ -14,10 +14,10 @@ Ahora qué pasaría si nosotros luego le asignamos un valor y tratamos de correr
 
 ```dart
 void main() {
-    int? x;
-    int y = 5;
-    x = y - 1;
-    print(x + y);
+  int? x;
+  int y = 5;
+  x = y - 1;
+  print(x + y);
 }
 ```
 
@@ -31,13 +31,13 @@ Vamos a imprimir la suma solamente si `x` no es nulo; caso contrario avisaremos 
 
 ```dart
 void main() {
-    int? x;
-    int y = 5;
-    if (x == null) {
-        print('x is null');
-    } else {
-        print(x + y);
-    }
+  int? x;
+  int y = 5;
+  if (x == null) {
+    print('x is null');
+  } else {
+    print(x + y);
+  }
 }
 ```
 
@@ -51,12 +51,12 @@ Supongamos que estamos en la entrada de una disco virtual (en Argentina se les l
 
 ```dart
 void main() {
-    int age = 19;
-    String message;
-    if (age >= 18) {
-        message = 'You can enter';
-    }
-    print(message);
+  int age = 19;
+  String message;
+  if (age >= 18) {
+    message = 'You can enter';
+  }
+  print(message);
 }
 ```
 
@@ -64,14 +64,14 @@ _The non-nullable local variable 'message' must be assigned before it can be use
 
 ```dart
 void main() {
-    int age = 19;
-    String message;
-    if (age >= 18) {
-        message = 'You can enter';
-    } else {
-        message = 'You cannot enter';
-    }
-    print(message);
+  int age = 19;
+  String message;
+  if (age >= 18) {
+    message = 'You can enter';
+  } else {
+    message = 'You cannot enter';
+  }
+  print(message);
 }
 ```
 
@@ -81,8 +81,75 @@ Pero antes de terminar, yo sé que ustedes saben que he escrito el ejemplo de es
 
 ```dart
 void main() {
-    int age = 19;
-    String message = age >= 18 ? 'You can enter' :  'You cannot enter';
-    print(message);
+  int age = 19;
+  String message = age >= 18 ? 'You can enter' : 'You cannot enter';
+  print(message);
+}
+```
+
+Y en realidad no terminé! 🤣 Qué pasa con las colecciones? Puede Dart también inferir si un valor es nulo? Veamos el siguiente ejemplo. 💀 Me gustaría que antes de ver el resultado de cada uno de los códigos, escriban qué les parece que puede hacer Dartpad:
+
+_Primer ejemplo_:
+
+```dart
+void main() {
+  const hardware = ['Mouse', 'Keyboard', null];
+  for (var hardwarePiece in hardware) {
+    print(hardwarePiece);
+  }
+}
+```
+
+_Segundo ejemplo_:
+
+```dart
+void main() {
+  const hardware = <String>['Mouse', 'Keyboard', null];
+  for (var hardwarePiece in hardware) {
+    print(hardwarePiece);
+  }
+}
+```
+
+_Tercer ejemplo_:
+
+```dart
+void main() {
+  const hardware = <String?>['Mouse', 'Keyboard', null];
+  for (var hardwarePiece in hardware) {
+    print(hardwarePiece);
+  }
+}
+```
+
+_Cuarto ejemplo_:
+
+```dart
+void main() {
+  const hardware = <String?>['Mouse', 'Keyboard', null];
+  for (var hardwarePiece in hardware) {
+    print(hardwarePiece.toUpperCase());
+  }
+}
+```
+
+Vamos a ir analizando cada caso.
+
+En el primero vemos que podemos crear una lista introduciendo un valor nulo porque no especificamos su tipo y luego, cuando imprimimos cada valor, vemos el valor nulo.
+
+En el segundo ejemplo, tenemos un error ya que estamos estrictamente definiendo el tipo que debe recibir nuestra lista y ese tipo no es nulleable.
+
+En el tercer ejemplo sin embargo, admitimos un valor nulo por lo que no tendríamos problema en hacerlo.
+
+En el cuarto y último ejemplo finalmente, vemos otro error ya que no podemos ejecutar esa función sobre la variable debido a que sabe que puede ser nula.
+
+💀 Cómo haríamos para corregir el último ejemplo, permitiéndonos imprimir la pieza de hardware en letras mayúsculas y previniendo el caso de que la variable llegue nula?
+
+```dart
+void main() {
+  const hardware = <String?>['Mouse', 'Keyboard', null];
+  for (var hardwarePiece in hardware) {
+    if (hardwarePiece != null) print(hardwarePiece.toUpperCase());
+  }
 }
 ```
