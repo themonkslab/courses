@@ -169,4 +169,4 @@ void main() {
 }
 ```
 
-Ahora podemos ver que ya no tenemos error y que imprime nuestros valores, aunque también para ser sinceros, imprime el valor `null`. Por qué sucede esto? Porque nosotros estamos llamando al método solo si el valor no es nulo; si el valor es nulo, ese método es como si no existiera y solo nos queda el valor nulo, el `null` y es esto lo que imprime.
+Ahora podemos ver que ya no tenemos error y que imprime nuestros valores, aunque también para ser sinceros, imprime el valor `null`. Por qué sucede esto? Para poder entenderlo, van a tener que seguir en el próximo artículo en el que tratamos las jararquías de clases en Dart.
