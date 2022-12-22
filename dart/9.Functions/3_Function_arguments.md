@@ -123,4 +123,40 @@ void greetings(String name) {
 
 Muy simple y muchas gracias Dart: nos avisa que el parámetro del tipo `bool` no puede ser asignado a uno del tipo `String`! Bendito _static check_ que nos avisa y previene de estos errores! De la misma forma, si nos olvidamos de pasar un parámetro, Dart también nos avisa!
 
-Y como para cerrar: ya vimos que __las funciones nos sirven para hacer algo__ por lo que __deben declararse con un verbo__, mientras que __los nombres deben declararse como sustantivos__.
+Ya vimos que __las funciones nos sirven para hacer algo__ por lo que __deben declararse con un verbo__, mientras que __los nombres deben declararse como sustantivos__. Además, es __importante cuidar de que cada función que escribamos, sirva para un solo propósito__ y no hacer muchas cosas a la vez. Por ejemplo, supongamos que estamos en una fiesta y queremos saludar a una persona conocida para luego introducirle a un amigo. Vamos a hacer lo que no deberíamos hacer:
+
+```dart
+void main() {
+  sayHiAndIntroductAFriend('Marcos', 'Julia');
+}
+
+void sayHiAndIntroductAFriend(
+  String newPerson,
+  String friendName,
+) {
+  print('Hi $newPerson!');
+  print('This is $friendName!');
+}
+```
+
+Qué pasaría si de repente nuestro  amigo se fuera al baño y ya no tenemos a quien presentar? No podríamos saludar! 🤣 Por ello, es muy importante que cada función cumple con una ... función!
+
+```dart
+void main() {
+  sayHiTo('Marcos');
+  introduce('Julia');
+  // Julia goes to the bathroom
+  sayHiTo('Jupiter');
+  // Julia come back
+  sayHiTo('Aurelius');
+  introduce('Julia');
+}
+
+void sayHiTo(String newPerson) {
+  print('Hi $newPerson!');
+}
+
+void introduce(String friendName) {
+  print('This is $friendName!');
+}
+```
