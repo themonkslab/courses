@@ -44,3 +44,7 @@ void main() {
 Aquí ya respondimos la mitad en los párrafos anteriores: imprime el valor nulo porque este sí tiene dentro de sus únicos tres métodos, uno llamado `toString()` que nos permite pasar a cadena de texto su valor y por ende imprimirlo.
 
 Por el otro, nos permite acceder al método `toUpperCase()`? La gente de Dart hizo que el tipo nulleable, en este caso el `String?`, sea padre de los tipos `String` y `Null` de forma tal que pueda recibir ambas formas. En nuestro ejemplo, el _static check_ sabe que el valor es una `String` y eso es lo que recibe el padre pudiendo aplicar sus métodos, en este caso el `toUpperCase()`.
+
+De esta forma, la jerarquía quedaría algo así, teniendo debajo de todo, una clase `Never` que no veremos por ahora y permite detener la ejecución de la aplicación y lanzar una excepción.
+
+![Jerarquía simplificada final](4.3_jerarquia_final.png)
