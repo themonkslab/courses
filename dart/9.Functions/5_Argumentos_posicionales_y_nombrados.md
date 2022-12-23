@@ -172,3 +172,51 @@ String describe(
   return 'This is $friendName!. She is $age years old. She loves to play $sport!';
 }
 ```
+
+Finalmente también podemos declarar valores posicionales opcionales y hasta darles un valor por defecto. Para hacerlos opcionales, los rodeamos con `[]` y agregamos el `?`:
+
+```dart
+void main() {
+  final friend = describe(
+    'Julia',
+    32,
+  );
+  sayHiTo('Marcos');
+  print(friend);
+  sayHiTo('Aurelius');
+  print(friend);
+}
+
+void sayHiTo(String newPerson) {
+  print('Hi $newPerson!');
+}
+
+String describe(
+    String friendName, int age, [String? sport]) {
+  return 'This is $friendName!. She is $age years old. ${sport != null ? 'She loves to play $sport!' : 'She does not like to play sports!'}';
+}
+```
+
+Y  para declarar  _default values_ lo hacen igual que en los casos anteriores, solamente que siguen rodeando al valor con `[]`:
+
+```dart
+void main() {
+  final friend = describe(
+    'Julia',
+    32,
+  );
+  sayHiTo('Marcos');
+  print(friend);
+  sayHiTo('Aurelius');
+  print(friend);
+}
+
+void sayHiTo(String newPerson) {
+  print('Hi $newPerson!');
+}
+
+String describe(
+    String friendName, int age, [String sport = 'Soccer']) {
+  return 'This is $friendName!. She is $age years old. ${sport != null ? 'She loves to play $sport!' : 'She does not like to play sports!'}';
+}
+```
