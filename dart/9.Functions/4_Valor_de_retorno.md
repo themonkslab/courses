@@ -57,8 +57,10 @@ String describe(String friendName, int age, String sport) {
 __Requirement__:
 
 1. Crear una función que reciba dos valores del tipo `double` y un tipo de operación matemática (suma, resta, multiplicación y división) a ejecutar con esos dos valores.
-2. Crear un `assertion` para asegurarse de que el resultado es el correcto.
-3. Crear otra función para imprimir una frase que muestre qué valores se utilizaron y la operación elegida, cambiando el texto según el tipo de operación:
+2. Crear un solo `assertion` para asegurarse de que los dos valores introducidos son del tipo `double`.
+3. Explicar el porqué del paso previo.
+4. Crear un `assertion` para asegurarse de que el resultado es el correcto.
+5. Crear otra función para imprimir una frase que muestre qué valores se utilizaron y la operación elegida, cambiando el texto según el tipo de operación:
   a. 'The result of a + b is 47'.
   b. 'The result of a - b is -27'.
   c. 'The result of a * b is 370'.
@@ -78,6 +80,7 @@ enum MathOperation { add, substract, multiply, divide }
 void main() {
   const a = 10.0;
   const b = 37.0;
+  assert(a is double && b is double, 'a and b should be of type double');
   const operation = MathOperation.add;
   final result = calculate(a, b, operation);
   assert(result == 47, 'Something went wrong with your calculate function');
@@ -110,3 +113,9 @@ void printResult(MathOperation operation, double result) {
   }
 }
 ```
+
+Y la explicación del porqué tienen que ser del tipo `double` es porque si usáramos números enteros `int` para `a` y `b`, la división va a resultar en un `double`.
+
+Además, dejo ese `assertion` en la solución para que lo puedan ver ustedes pero Dart ya nos avisa de que no es necesario debido a que mediante el _static check_, él sabe que son `double`.
+
+Finalmente, podríamos haber hecho una función para juntar ambas operaciones pero... PEEEERO... 🧐 Exacto... ya ustedes saben que __una función como una variable debe tener una y solo una razón para existir__. Esto es algo que veremos en el futuro cuando aprendamos sobre _SOLID_, que básicamente refiere a escribir código limpio, simple y fácil de mantener. El que tenga cada pedazo de nuestro código una sola razón para existir refiere a la __primera letra del acrónimo _SOLID_, _Single responsability_, una sola responsabilidad.__
