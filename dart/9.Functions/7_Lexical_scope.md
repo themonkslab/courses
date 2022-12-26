@@ -108,3 +108,98 @@ void main() {
   print(a);
 }
 ```
+
+Será que también sucede lo mismo con funciones? Yes! Y se llaman _Inner functions_
+
+## _Inner functions_
+
+Hasta ahora siempre declaramos las funciones fuera del `main`, sin embargo, también podríamos hacerlo dentro. Son funciones internas  y tienen los mismos comportamientos que estuvimos aprendiendo en este artículo:
+
+```dart
+const c = 'c: ☺️ Scope global. Todos me pueden utilizar!';
+
+void main() {
+  const a = 'a: Dentro del scope de main. 💃🏼';
+  print(a);
+  if (a.contains('Dentro')) {
+    const b = 'b: $a Dentro del main y dentro del if. 🍉';
+    print(b);
+  }
+  // Function declaration: declarando la función
+  void anInnerFunction() {
+    print('Esto es una función interna!');
+  }
+
+  // Function call: llamando a la función ya declarada
+  anInnerFunction();
+}
+```
+
+Y qué sucede en el caso siguiente:
+
+```dart
+const c = 'c: ☺️ Scope global. Todos me pueden utilizar!';
+
+void main() {
+  const a = 'a: Dentro del scope de main. 💃🏼';
+  print(a);
+  if (a.contains('Dentro')) {
+    const b = 'b: $a Dentro del main y dentro del if. 🍉';
+    print(b);
+  }
+  // Function declaration: declarando la función
+  void anInnerFunction() {
+    print('Esto es una inner function!');
+    print(b); // Undefined name 'b'
+  }
+
+  // Function call: llamando a la función ya declarada
+  anInnerFunction();
+}
+```
+
+Como `b` está declarada dentro del `if` entonces, la función que declaramos y a su vez declara otro _scope_, no lo conoce por lo que no lo puede llamar. Sería distinto el caso, si hubiéramos declarado esa función dentro del `if`:
+
+```dart
+const c = 'c: ☺️ Scope global. Todos me pueden utilizar!';
+
+void main() {
+  const a = 'a: Dentro del scope de main. 💃🏼';
+  print(a);
+  if (a.contains('Dentro')) {
+    const b = 'b: $a Dentro del main y dentro del if. 🍉';
+    print(b);
+    // Function declaration: declarando la función
+    void anInnerFunction() {
+      print('Esto es una inner function!');
+    }
+
+    // Function call: llamando a la función ya declarada
+    anInnerFunction();
+  }
+}
+```
+
+Y me dieron ganas de complicarla un poco! Qué pasará ahora?
+
+```dart
+const c = 'c: ☺️ Scope global. Todos me pueden utilizar!';
+
+void main() {
+  const a = 'a: Dentro del scope de main. 💃🏼';
+  print(a);
+  // Function declaration: declarando la función
+  void anInnerFunction(String b) {
+    print(b);
+  }
+
+  if (a.contains('Dentro')) {
+    const b = 'b: $a Dentro del main y dentro del if. 🍉';
+    print(b);
+    // Function call: llamando a la función ya declarada
+    anInnerFunction(b);
+  }
+}
+```
+
+En este caso, declaramos la función por fuera del `if` en donde se define `b` pero a esa función le requerimos un argumento llamado `b`. Luego la llamamos dentro del `if` que declara `b` y puede usarse tranquilamente. Debo aclarar que solamente utilicé `b` como nombre del argumento en la función para confundirlos pero podríamos haberla llamado de cualquier manera! 😂
