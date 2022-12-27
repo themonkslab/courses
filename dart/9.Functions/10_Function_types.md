@@ -68,3 +68,33 @@ void welcome(SayHi hi, String name) {
   print('Welcome to TheMonksLab! 😁');
 }
 ```
+
+## _Closures_
+
+La palabra significa 'cerramiento' y quiero que la vean en el siguiente ejemplo:
+
+```dart
+void main() {
+  const prefix = 'Dr.';
+  const listOfDoctors = ['John', 'Martin', 'Robertson'];
+  final result = listOfDoctors.map((lastname) => '$prefix $lastname');
+  print(result);
+}
+```
+
+Qué hicimos aquí? Concentrémosnos primero en `(lastname) => '$prefix $lastname'`. 💀 Sin repetir y sin soplar: qué sería ese pedazo de código? Sí, tómense su tiempo! Aunque... una pista es que lo vieron hace muuuuuy poquito...
+
+Sí! Muy bien! (😄 Ven cómo siempre pienso lo mejor de ustedes!? 🤣). Se trata de una función anónima aunque para que lo entiendan mejor vamos a sacarle el _arrow function_ y explicarles antes que el método `map` que ya verán, básicamente lo que hace es recorrer una lista y ejecutar una función que le pasemos en cada elemento de ella (sí, esa _anonymous function_ que acaban de descubrir):
+
+```dart
+void main() {
+  const prefix = 'Dr.';
+  const listOfDoctors = ['John', 'Martin', 'Robertson'];
+  final result = listOfDoctors.map((lastname) {
+    return '$prefix $lastname';
+  });
+  print(result);
+}
+```
+
+Lo ven más claramente? Súper! Ahora bien, ya que nos estamos poniendo un poco más detallistas, en realidad no es una _anonymous function_ sino que __se trata de una _closure_. Cuál es su diferencia? Que utiliza dentro, una variable definida fuera de__ su... a ver cómo anda su memoria?... dentro de __su _scope_ o ámbito__. Se trata del `prefix`. Y por esto es una _closure_.
