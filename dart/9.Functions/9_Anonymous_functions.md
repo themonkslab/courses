@@ -46,7 +46,7 @@ void main() {
 }
 
 void welcome(String Function(String) hi, String name) { // Cambio de nombre al argumento
-  print(sayHey(name));
+  print(hi(name));
   print('Welcome to TheMonksLab! 😁');
 }
 ```
@@ -60,7 +60,7 @@ void main() {
 }
 
 void welcome(String Function(String) hi, String name) { // Cambio de nombre al argumento
-  print(sayHey(name));
+  print(hi(name));
   print('Welcome to TheMonksLab! 😁');
 }
 ```
