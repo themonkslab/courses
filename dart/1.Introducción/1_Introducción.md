@@ -18,7 +18,7 @@ Ahí vas a poder presentarte, hacer preguntas, aprender mientras ayudás a otros
 
 No tengas miedo en __tomarte el tiempo que sea necesario para entender__: mejor lento pero seguro. Volvé a lecciones pasadas, repetí los ejercicios y tratá de aprender como si fueras a enseñarlo.
 
-No copies y pegues __el código__ sino __escribilo vos mismo o misma.__ Es impresionante lo que sucede cuando para escribirlo tenemos que entenderlo.
+No copies y pegues __el código__ sino __escribilo vos mismo o misma.__ Es impresionante lo que sucede cuando para escribirlo tenemos que entenderlo y es la mejor forma de __adquirir buenas prácticas__ que vendrían a ser la forma que por convención de la comunidad, es la mejor.
 
 Tratá de __leer todo desde el comienzo y tranquilamente__: artículos, código, mensajes de error. Traducí lo que no entiendas si está en inglés.
 
