@@ -58,23 +58,23 @@ Supongamos que tenemos la misma lista de personas del ejemplo anterior, y una ve
 ```dart
 void main() {
   const people = ['Jack', 'Justin', 'Martin', 'Eugenio'];
-  final peopleWithSuffix = [];
+  final  peopleWithTitle = [];
   for (var person in people) {
-    peopleWithSuffix.add('Dr. $person');
+     peopleWithTitle.add('Dr. $person');
   }
-  print(peopleWithSuffix);
+  print( peopleWithTitle);
 }
 ```
 
 ```dart
 void main() {
   const people = ['Jack', 'Justin', 'Martin', 'Eugenio'];
-  final peopleWithSuffix = people.map((person)=> 'Dr. $person');
-  print(peopleWithSuffix);
+  final  peopleWithTitle = people.map((person)=> 'Dr. $person');
+  print( peopleWithTitle);
 }
 ```
 
-Ahora... notan alguna diferencia en la variable resultante `peopleWithSuffix` en un caso y en el otro? 💀 Vayan a investigar!
+Ahora... notan alguna diferencia en la variable resultante ` peopleWithTitle` en un caso y en el otro? 💀 Vayan a investigar!
 
 Fíjense que en el primer caso imprime '[Dr. Jack, Dr. Justin, ...]' y en el segundo '(Dr. Jack, Dr. Justin, ...)'. Esto es porque __nuestro `map` retorna un `Iterable` que si recuerdan, era el padre de las `List` y de `Map` y representa una colección de elementos a los que se puede acceder de forma secuencial.__
 
@@ -93,7 +93,7 @@ Y qué pasa si queremos tener como retorno específicamente una `List` en lugar 
 ```dart
 void main() {
   const people = ['Jack', 'Justin', 'Martin', 'Eugenio'];
-  final peopleWithSuffix = people.map((person)=> 'Dr. $person').toList();
-  print(peopleWithSuffix);
+  final  peopleWithTitle = people.map((person)=> 'Dr. $person').toList();
+  print( peopleWithTitle);
 }
 ```
