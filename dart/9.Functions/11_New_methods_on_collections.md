@@ -74,7 +74,7 @@ void main() {
 }
 ```
 
-Ahora... notan alguna diferencia en la variable resultante ` peopleWithTitle` en un caso y en el otro? 💀 Vayan a investigar!
+Ahora... notan alguna diferencia en la variable resultante `peopleWithTitle` en un caso y en el otro? 💀 Vayan a investigar!
 
 Fíjense que en el primer caso imprime '[Dr. Jack, Dr. Justin, ...]' y en el segundo '(Dr. Jack, Dr. Justin, ...)'. Esto es porque __nuestro `map` retorna un `Iterable` que si recuerdan, era el padre de las `List` y de `Map` y representa una colección de elementos a los que se puede acceder de forma secuencial.__
 
