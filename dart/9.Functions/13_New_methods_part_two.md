@@ -147,3 +147,19 @@ List<T> where<T>(List<T> items, bool Function(T value) check) {
   return filteredItems;
 }
 ```
+
+## _Reduce_
+
+Este método nos permite combinar todos los elementos en una lista y producir un resultado único. El ejemplo más común es sumar todos los elementos de una lista y evitar tener que usar un _for-in_. Veámoslo con un ejemplo.
+
+Supongamos que tenemos una lista de `int` y queremos sumar todos sus items. Vamos a llamar al método `reduce` en dicha lista y éste va a recibir una función que va a retornar un `int` y va a tomar dos valores como argumentos, ambos `int` y va a ejecutar dicha función de forma iterativa, como les muestro en los comentarios:
+
+```dart
+  const list = [1, 2, 3, 4];
+  final sum = list.reduce((value, element) => value + element);
+  print(sum); // 10
+  // value:   1 => 3 => 6
+  // element: 2 => 3 => 4
+```
+
+En la primera iteración, el `value` es nuestro primer item en la lista, y nuestro segundo item, el `element`. Efectúa la operación y se mueve a la siguiente iteración. El `value` ahora habrá sido actualizado con el resultado de la primer suma, de la iteración previa y el `element` ahora será el tercer item. Finalmente en la última iteración, el `value` es el resultado de la suma de la iteración anterior y el `element` nuestro último item de la lista. Lo que retorna al final es el último valor alcanzado por el `value`.
