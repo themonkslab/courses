@@ -76,4 +76,4 @@ Como habrán podido ver, escribir código solamente declarativo vuelve nuestro c
 
 Ahora que conocen sobre funciones, pueden empezar desde las bases, inclinándose a un tipo de programación funcional, en donde cuiden la pureza de las funciones y utilicen métodos como `map`, `where` o los que vayan conociendo para hacer su código más simple y componible.
 
-Existen diferentes paquetes que facilitan este tipo de paradigma pero por el momento nos vamos a concentrar en las herramientas que Dart tiene para darnos y con ellas, hasta el infinito! ♾️ 
+Existen diferentes paquetes que facilitan este tipo de paradigma pero por el momento nos vamos a concentrar en las herramientas que Dart tiene para darnos y con ellas, hasta el infinito! ♾️
