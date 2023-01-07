@@ -121,7 +121,7 @@ List<String> findPrice(String rawDocument) {
 
 ```
 
-## 💪 Encontrando el precio
+## 💪 Implementando nosotros mismos el _where_
 
 __Requirement__: implementar la función `where` como si no estuviera escrita. Es un método que tiene que recibir una lista de items y una función que evalúe cada item de dicha lista para luego retornar todos aquellos valores que hayan cumplido con la condición pedida en la función. Utilizar genéricos para que sirva con listas de cualquier tipo y demostrar su funcionamiento pasándole a su nueva función `where` la lista `[1,2,3,4,5,6]` y una función como parámetro que devuelva los números impares. El resultado debiera ser `[1, 3, 5]`.
 

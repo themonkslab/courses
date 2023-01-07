@@ -217,4 +217,163 @@ Esto se vuelve cada vez más bello y ustedes dirán: y para qué nos enseñaste 
 
 Mientras tanto, les quiero hacer notar que __habrán visto que primero declaramos los constructores y luego las _member variables_? Esto es una convención del lenguaje y es recomendado seguirla.__
 
-Y también podrán ver que en la función de construcción no utilizamos ningún `return`. Esto es porque dicho `return` es implícito dentro de las funciones constructoras. 
+Y también podrán ver que en la función de construcción no utilizamos ningún `return`. Esto es porque dicho `return` es implícito dentro de las funciones constructoras.
+
+Finalmente, qué les parece a ustedes si hacemos esto? Vayan al 👁️:
+
+```dart
+class GreensAccount {
+  GreensAccount({
+    required this.accountHolder,
+    this.balance = 0,
+  });
+
+  String accountHolder;
+  double balance;
+
+  void buyFor(double amount) {
+    balance -= amount;
+  }
+
+  void payFor(double amount) {
+    balance += amount;
+  }
+
+  void getBalance() {
+    if (balance < 0) {
+      print('$accountHolder: You are in debt. Your balance is: $balance');
+    } else if (balance > 0) {
+      print('$accountHolder: You are in credit. Your balance is: $balance');
+    } else {
+      print('$accountHolder: Your balance is 0');
+    }
+  }
+}
+
+void main() {
+  final mauGreensAccount = GreensAccount(
+    accountHolder: 'Mauro Di Bert',
+    balance: 1000,
+  );
+  mauGreensAccount.buyFor(1500);
+  mauGreensAccount.payFor(1200);
+  mauGreensAccount.accountHolder = 'Martín Smith'; // 👁️
+  mauGreensAccount.getBalance();
+}
+```
+
+_Whaaaat_? Exacto! Estaríamos modelando nuestra cuenta de manera totalmente incorrecta si en cualquier momento, podemos cambiar su titular! 😆 Cómo hacemos para que haya _properties_ dentro de nuestra clase que no puedan mutar y que otros sí?
+
+## _Mutable and Immutable members_
+
+En este caso, queremos que el balance sea algo que pueda cambiar a lo largo de nuestra historia con el comercio en cuestión pero no así el nombre del dueño de la cuenta. Cómo hacemos esto? Simple, agregando `final` a la declaración de nuestra variable. 💀 Prueben y fijen qué sucede cuando intentamos cambiar el `accountHolder`:
+
+```dart
+class GreensAccount {
+  GreensAccount({
+    required this.accountHolder,
+    this.balance = 0,
+  });
+
+  final String accountHolder; // 👁️
+  double balance;
+
+  void buyFor(double amount) {
+    balance -= amount;
+  }
+
+  void payFor(double amount) {
+    balance += amount;
+  }
+
+  void getBalance() {
+    if (balance < 0) {
+      print('$accountHolder: You are in debt. Your balance is: $balance');
+    } else if (balance > 0) {
+      print('$accountHolder: You are in credit. Your balance is: $balance');
+    } else {
+      print('$accountHolder: Your balance is 0');
+    }
+  }
+}
+
+void main() {
+  final mauGreensAccount = GreensAccount(
+    accountHolder: 'Mauro Di Bert',
+    balance: 1000,
+  );
+  mauGreensAccount.buyFor(1500);
+  mauGreensAccount.payFor(1200);
+  mauGreensAccount.accountHolder = 'Martín Smith'; // 👁️
+
+  mauGreensAccount.getBalance();
+}
+```
+
+Dart nos dice que no puede ser utilizado como un _setter_ porque es _final_. Y listo!
+
+Siempre tienen que preguntarse al crear o modelar una clase o tipo, si dicha propiedad debe mutar o no con el tiempo y en función de eso, establecer si son `final` o no.
+
+Es muy importante que traten de hacer que cada clase sea comprensible, fácil de utilizar y al mismo tiempo, que sea difícil cometer errores con ella!
+
+## 💪 Modelando el mundo real
+
+__Requirement__: crear una clase que nos permita crear computadoras y que luego creen una instancia de ella, con las características de su computadora y llamen a todos sus métodos. Debe contener las propiedades listadas debajo, un método que las imprima a todas y un método que nos permita actualizar sistema operativo y ram*.
+
+- Chip.
+- Memoria.
+- Pantalla.
+- Sistema operativo.
+
+*En mi caso particular voy a hacer una pequeña trampita ya que mi computadora no puede actualizarse el RAM pero vamos a modelarla como si puediera hacerlo.
+
+---
+
+__💀 Solución__:
+
+```dart
+class Computer {
+  Computer({
+    required this.owner,
+    required this.chip,
+    required this.screen,
+    required this.memory,
+    required this.operativeSystem,
+  });
+
+  final String owner;
+  final String chip;
+  final String screen;
+  int memory;
+  String operativeSystem;
+
+  void printComponents() => print('''
+  Owner: $owner
+  ---
+  Chip: $chip
+  Screen: $screen
+  Memory: $memory
+  OS: $operativeSystem
+  ---
+  ''');
+  
+  void updateOS(String operativeSystem) => this.operativeSystem = operativeSystem; 
+  void updateMemory(int memory) => this.memory = memory; 
+
+}
+
+
+void main() {
+  final mauComputer = Computer(
+      owner: 'Mau Di Bert',
+      chip: 'M1',
+      screen: '13.3',
+      memory: 8,
+      operativeSystem: 'Ventura 13.0.1');
+  
+  mauComputer.printComponents();
+  mauComputer.updateMemory(16);
+  mauComputer.updateOS('Ventura 13.1.0');
+  mauComputer.printComponents();
+}
+```
