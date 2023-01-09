@@ -318,14 +318,14 @@ Es muy importante que traten de hacer que cada clase sea comprensible, fácil de
 
 ## 💪 Modelando el mundo real
 
-__Requirement__: crear una clase que nos permita crear computadoras y que luego creen una instancia de ella, con las características de su computadora y llamen a todos sus métodos. Debe contener las propiedades listadas debajo, un método que las imprima a todas y un método que nos permita actualizar sistema operativo y ram*.
+__Requirement__: crear una clase que nos permita modelar una computadora y que luego creen una instancia de ella, con las características de su computadora y llamen a todos sus métodos. Debe contener las propiedades listadas debajo, un método que las imprima y un método que nos permita actualizar sistema operativo y ram*.
 
 - Chip.
 - Memoria.
 - Pantalla.
 - Sistema operativo.
 
-*En mi caso particular voy a hacer una pequeña trampita ya que mi computadora no puede actualizarse el RAM pero vamos a modelarla como si puediera hacerlo.
+*En mi caso particular voy a hacer una pequeña trampa ya que en mi computadora no puede actualizarse el RAM pero vamos a modelarla como si pudiera hacerlo.
 
 ---
 
@@ -377,3 +377,31 @@ void main() {
   mauComputer.printComponents();
 }
 ```
+
+__🤓 Notas__:
+
+Algunos podrían preguntarse el porqué crean una clase cuando podemos utilizar un mapa para representar algo. Déjenme responderle con un ejemplo, representando la computadora de recién pero con un mapa. 💀 Cópienlo (primera vez que creo les digo copien un código y será una de las pocas 🤣), córranlo y traten de entender y explicar por qué sucede lo que sucede:
+
+```dart
+void main() {
+  final mauComputerMap = <String, dynamic>{
+    'owner': 'Mau Di Bert',
+    'chip': 'M1',
+    'screen': '13.3',
+    'memory': 8,
+    'operativSystem': 'Ventura 13.0.1'
+  };
+
+  print(mauComputerMap['owner']);
+  print(mauComputerMap['chip']);
+  print(mauComputerMap['screen']);
+  print(mauComputerMap['memory']);
+  print(mauComputerMap['operativeSystem']);
+}
+```
+
+__Es muy fácil cometer un _typo_ o error mientras tipeamos tanta cantidad de caracteres por día__. En el caso anterior, no escribí correctamente el _key_ del mapa `operativeSystem` sino que omití la letra 'e' de _operative_ por lo que cuando luego queremos acceder a ella mediante `[]`, no podemos hacerlo y nos retorna el _value_ `null`. __Es muy útil el tener una clase que establece qué valores vamos a guardar en ella como también es muy útil establecer de qué tipos serán esos valores.__ Y para explicar lo último, vamos a la solución.
+
+Qué pasaría si ustedes intentaran ingresar `13.3` como valor del _member variable_ `screen`? Nuestra clase se encargaría de decirnos que el tipo que espera para dicho valor no es del tipo `double` sino del tipo `String` y esto es extremadamente útil para no cometer errores.
+
+__Prioricen el crear una clase siempre__, por más de que lleve un poco de tiempo pensar cómo representar aquello que queremos de la forma más correcta.
