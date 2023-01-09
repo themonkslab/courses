@@ -405,3 +405,65 @@ __Es muy fácil cometer un _typo_ o error mientras tipeamos tanta cantidad de ca
 Qué pasaría si ustedes intentaran ingresar `13.3` como valor del _member variable_ `screen`? Nuestra clase se encargaría de decirnos que el tipo que espera para dicho valor no es del tipo `double` sino del tipo `String` y esto es extremadamente útil para no cometer errores.
 
 __Prioricen el crear una clase siempre__, por más de que lleve un poco de tiempo pensar cómo representar aquello que queremos de la forma más correcta.
+
+## _Const constructors_
+
+Ya hemos visto a través de distintos ejemplos, que __hay valores que no van a cambiar a lo largo de toda una aplicación__ y que si los establecemos como valores constantes mediante la utilización de __`const`__, no solo vamos a estar __evitando que ese valor sea cambiando sin darnos cuenta__ y eso provoque errores en nuestra aplicación, sino que también va a permitirle a Dart __optimizar la performance__ de nuestro desarrollo. __Lo mismo sucede con las clases.__
+
+Pensemos en una aplicación para un Teatro de Ópera. En ese tipo de lugares, se suelen tener reglas muy específicas sobre la forma de vestir de la persona que entra, en qué momento entrar o salir de la función, la edad mínima recomendada para ingresar al recinto, etc. Esa serie de reglas no van a cambiar jamás para la institución (o en muy raras ocasiones) y van a determinar una cantidad importante de cosas a la hora de crear una aplicación para dicho lugar.
+
+Vamos a crear una clase para representar entonces, dos de esas reglas por cuestiones de brevedad:
+
+```dart
+class OperaTheaterRules {
+  OperaTheaterRules(
+    this.recommendedMinimumAge,
+    this.recommendedMinimumAgeRule,
+  );
+  final String recommendedMinimumAgeRule;
+  final int recommendedMinimumAge;
+}
+```
+
+Bien! Ya tenemos nuestra clase y sabemos que el contenido de las _member variables_ de dicha clase, no van a cambiar. Bien podríamos cuando la instanciamos, crearla como constante de esta manera:
+
+```dart
+class OperaTheaterRules {
+  OperaTheaterRules(
+    this.recommendedMinimumAge,
+    this.recommendedMinimumAgeRule,
+  );
+  final String recommendedMinimumAgeRule;
+  final int recommendedMinimumAge;
+}
+
+void main() {
+  const myOperaTheaterRules = OperaTheaterRules(
+    5,
+    'Never under five should enter',
+  );
+}
+
+```
+
+Qué pasó? _The constructor being called isn't a const constructor._ Nos dice que llamamos a un constructor que no es constante por lo que no podemos crear un valor constante. Cómo lo logramos? fácil! Definiendo un constructor constante agregando dicha palabra antes del _constructor_! 😂
+
+```dart
+class OperaTheaterRules {
+  const OperaTheaterRules(
+    this.recommendedMinimumAge,
+    this.recommendedMinimumAgeRule,
+  );
+  final String recommendedMinimumAgeRule;
+  final int recommendedMinimumAge;
+}
+
+void main() {
+  const myOperaTheaterRules = OperaTheaterRules(
+    5,
+    'Never under five should enter',
+  );
+}
+```
+
+Esta es también una buena práctica para que piensen a la hora de crear cualquier clase: tengo elementos que no van a mutar y se mantendrán constantes a lo largo de toda mi aplicación en esta clase? Creen un constructor constante en dicho caso!
