@@ -412,16 +412,18 @@ Ya hemos visto a través de distintos ejemplos, que __hay valores que no van a c
 
 Pensemos en una aplicación para un Teatro de Ópera. En ese tipo de lugares, se suelen tener reglas muy específicas sobre la forma de vestir de la persona que entra, en qué momento entrar o salir de la función, la edad mínima recomendada para ingresar al recinto, etc. Esa serie de reglas no van a cambiar jamás para la institución (o en muy raras ocasiones) y van a determinar una cantidad importante de cosas a la hora de crear una aplicación para dicho lugar.
 
-Vamos a crear una clase para representar entonces, dos de esas reglas por cuestiones de brevedad:
+Vamos a crear una clase para representar entonces esas reglas:
 
 ```dart
 class OperaTheaterRules {
   OperaTheaterRules(
     this.recommendedMinimumAge,
     this.recommendedMinimumAgeRule,
+    this.dressingCodeRule,
   );
-  final String recommendedMinimumAgeRule;
-  final int recommendedMinimumAge;
+  final String? recommendedMinimumAgeRule;
+  final int? recommendedMinimumAge;
+  final String? dressingCodeRule;
 }
 ```
 
@@ -432,18 +434,21 @@ class OperaTheaterRules {
   OperaTheaterRules(
     this.recommendedMinimumAge,
     this.recommendedMinimumAgeRule,
+    this.dressingCodeRule,
+
   );
-  final String recommendedMinimumAgeRule;
-  final int recommendedMinimumAge;
+  final String? recommendedMinimumAgeRule;
+  final int? recommendedMinimumAge;
+  final String? dressingCodeRule;
 }
 
 void main() {
   const myOperaTheaterRules = OperaTheaterRules(
     5,
     'Never under five should enter',
+    'The public is kindly requested to dress in keeping with the decorum of the Theatre, out of respect for the Theatre and for other viewers. People wearing shorts or sleeveless T-shirts will not be allowed inside the auditorium; in this case, tickets will not be reimbursed',
   );
 }
-
 ```
 
 Qué pasó? _The constructor being called isn't a const constructor._ Nos dice que llamamos a un constructor que no es constante por lo que no podemos crear un valor constante. Cómo lo logramos? fácil! Definiendo un constructor constante agregando dicha palabra antes del _constructor_! 😂
@@ -453,17 +458,91 @@ class OperaTheaterRules {
   const OperaTheaterRules(
     this.recommendedMinimumAge,
     this.recommendedMinimumAgeRule,
+    this.dressingCodeRule,
+
   );
-  final String recommendedMinimumAgeRule;
-  final int recommendedMinimumAge;
+  final String? recommendedMinimumAgeRule;
+  final int? recommendedMinimumAge;
+  final String? dressingCodeRule;
 }
 
 void main() {
   const myOperaTheaterRules = OperaTheaterRules(
     5,
     'Never under five should enter',
+    'The public is kindly requested to dress in keeping with the decorum of the Theatre, out of respect for the Theatre and for other viewers. People wearing shorts or sleeveless T-shirts will not be allowed inside the auditorium; in this case, tickets will not be reimbursed',
   );
 }
 ```
 
 Esta es también una buena práctica para que piensen a la hora de crear cualquier clase: tengo elementos que no van a mutar y se mantendrán constantes a lo largo de toda mi aplicación en esta clase? Creen un constructor constante en dicho caso!
+
+## _Named constructors_
+
+En el ejemplo del teatro, creamos un __constructor que debería ser útil para las reglas en una gran parte de casos__ y por eso es un constructor por defecto o _default constructor_ pero qué sucede en los casos en donde mi teatro de ópera se utiliza para un recorrido turístico? O cuando se abre por la noche como un museo con disfraces? Son casos muy particulares en donde posiblemente las reglas cambien! En ese caso me gustaría poder crearlo específicamente con reglas constante pero diferentes! Cómo podríamos hacerlo? Utilizando constructores con nombre!
+
+Lo que tenemos que hacer es utilizar nuestro nombre de clase como ya lo hicimos con nuestro _default constructor_, para después un `.` y el nombre específico para emplear finalmente una _initializer list_ con los valores que queremos para éste.
+
+```dart
+class OperaTheaterRules {
+  const OperaTheaterRules(
+    this.recommendedMinimumAge,
+    this.recommendedMinimumAgeRule,
+    this.dressingCodeRule,
+  );
+  final String? recommendedMinimumAgeRule;
+  final int? recommendedMinimumAge;
+  final String? dressingCodeRule;
+
+  OperaTheaterRules.visitMode()
+      : recommendedMinimumAge = 0,
+        recommendedMinimumAgeRule = null,
+        dressingCodeRule = null;
+
+  OperaTheaterRules.nightMode(this.dressingCodeRule)
+      : recommendedMinimumAge = 18,
+        recommendedMinimumAgeRule = 'Underage are not allowed in night tours.';
+}
+
+void main() {
+  const myOperaTheaterRules = OperaTheaterRules(
+    5,
+    'Never under five should enter',
+    'The public is kindly requested to dress in keeping with the decorum of the Theatre, out of respect for the Theatre and for other viewers. People wearing shorts or sleeveless T-shirts will not be allowed inside the auditorium; in this case, tickets will not be reimbursed',
+  );
+}
+```
+
+De esta manera, si tenemos que definir comportamientos o estados específicos, podemos instanciar de forma diferente nuestra clase utilizando los constructores nombrados:
+
+```dart
+class OperaTheaterRules {
+  const OperaTheaterRules(
+    this.recommendedMinimumAge,
+    this.recommendedMinimumAgeRule,
+    this.dressingCodeRule,
+  );
+  final String? recommendedMinimumAgeRule;
+  final int? recommendedMinimumAge;
+  final String? dressingCodeRule;
+
+  OperaTheaterRules.visitMode()
+      : recommendedMinimumAge = 0,
+        recommendedMinimumAgeRule = null,
+        dressingCodeRule = null;
+
+  OperaTheaterRules.nightMode(this.dressingCodeRule)
+      : recommendedMinimumAge = 18,
+        recommendedMinimumAgeRule = 'Underage are not allowed in night tours.';
+}
+
+void main() {
+  const myOperaTheaterRules = OperaTheaterRules(
+    5,
+    'Never under five should enter',
+    'The public is kindly requested to dress in keeping with the decorum of the Theatre, out of respect for the Theatre and for other viewers. People wearing shorts or sleeveless T-shirts will not be allowed inside the auditorium; in this case, tickets will not be reimbursed',
+  );
+  
+  final myOperaTheaterNightRules = OperaTheaterRules.nightMode('Animals Dressing');
+}
+```
