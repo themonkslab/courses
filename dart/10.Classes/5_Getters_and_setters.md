@@ -109,3 +109,89 @@ void main() {
 Teníamos a `kilometers` como `final` por lo que no íbamos a poder setear nada en dicha _property_!
 
 Y listo! Ya tenemos nuestra clase bastante completita! ⚡️
+
+## 💪 Getteando en la cocina
+
+__Requirement__: dada una clase `Recipe`, en la que puedan cambiar su dificultad y puedan agregarle las siguientes funcionalidades:
+
+- Calcular el tiempo total de realización en horas.
+- Setear el tiempo total de realización en minutos, desde horas.
+- Tener un contructor nombrado para recetas cortas por debajo de los 15 minutos
+- Utilizarla creando una receta para hacer Tabuleh en la que su realización lleva 14 minutos, cambiarle le dificultad a muy fácil y calcular cuánto demora realizarla en horas para luego actualizar el tiempo de realización a 0.1 horas y ver cuánto sería eso en minutos.
+
+```dart
+enum Difficulty { superEasy, easy, medium, hard }
+
+class Recipe {
+  Recipe({
+    required this.ingredients,
+    required this.minutes,
+    required this.difficulty,
+    required this.implementation,
+  });
+
+  final List<String> ingredients;
+  double minutes;
+  final Difficulty difficulty;
+  final String implementation;
+}
+```
+
+---
+
+__💀 Solución__:
+
+```dart
+enum Difficulty { superEasy, easy, medium, hard }
+
+class Recipe {
+  Recipe({
+    required this.ingredients,
+    required this.minutes,
+    required this.difficulty,
+    required this.implementation,
+  });
+
+  final List<String> ingredients;
+
+  double minutes;
+  double get hours => double.parse((minutes / 60).toStringAsFixed(2));
+  set hours(double hours) => minutes = hours * 60;
+
+  Difficulty difficulty;
+  final String implementation;
+
+  Recipe.short({
+    required this.ingredients,
+    required this.minutes,
+    required this.difficulty,
+    required this.implementation,
+  }) : assert(
+            minutes < 15, 'Total amount of time should not surpass 15 minutes');
+}
+
+void main() {
+  final tabouliSalad = Recipe.short(
+    ingredients: [
+      '½ cup fine bulgur wheat',
+      '4 firm Roma tomatoes, very finely chopped',
+      '1 English cucumber (hothouse cucumber), very finely chopped',
+      '2 bunches parsley, part of the stems removed, washed and well-dried, very finely chopped',
+      '12-15 fresh mint leaves, stems removed, washed, well-dried, very finely chopped',
+      '4 green onions, white and green parts, very finely chopped',
+      'Salt',
+      '3-4 tablespoon lime juice (lemon juice, if you prefer)',
+      '3-4 tablespoon Early Harvest extra virgin olive oil',
+      'Romaine lettuce leaves to serve, optional',
+    ],
+    minutes: 14,
+    difficulty: Difficulty.easy,
+    implementation: '...',
+  );
+
+  tabouliSalad.difficulty = Difficulty.superEasy;
+  print(tabouliSalad.hours);
+  tabouliSalad.hours = 0.1;
+  print(tabouliSalad.minutes);
+}
+```
