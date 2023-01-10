@@ -7,7 +7,9 @@
         {
             "name": "Dart & Flutter",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "program": "dart/7.Procesamiento_de_datos/2.1_data_processing.dart",
+            "args": ["dart/7.Procesamiento_de_datos/data_to_read.csv"]
         }
     ]
 }
