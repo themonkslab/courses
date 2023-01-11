@@ -113,3 +113,98 @@ void main() {
   nowWeNeedToInstantiate.printFabebookWithoutBasePath();
 }
 ```
+
+## _Private variables_ y _methods_
+
+Veamos el ejemplo en el que tratábamos de representar una cuenta con un negocio de nuestro barrio:
+
+```dart
+class GreensAccount {
+  GreensAccount({
+    required this.accountHolder,
+    this.balance = 0,
+  });
+
+  final String accountHolder;
+  double balance;
+
+  void buyFor(double amount) {
+    balance -= amount;
+  }
+
+  void payFor(double amount) {
+    balance += amount;
+  }
+
+  void getBalance() {
+    if (balance < 0) {
+      print('$accountHolder: You are in debt. Your balance is: $balance');
+    } else if (balance > 0) {
+      print('$accountHolder: You are in credit. Your balance is: $balance');
+    } else {
+      print('$accountHolder: Your balance is 0');
+    }
+  }
+}
+
+void main() {
+  final mauGreensAccount = GreensAccount(
+    accountHolder: 'Mauro Di Bert',
+    balance: 1000,
+  );
+  
+  mauGreensAccount.balance = 10000000; // 😯
+}
+```
+
+Uno podría hacer eso!? Claro! Porque la _member variable_ se encuentra expuesta en dicha clase! Para que eso no suceda, deberíamos hacerla privada llamándola con un _underscore_ (`_`) antes del nombre que queríamos ponerle: `_balance`.
+
+No obstante, si intentamos hacerlo en el ejemplo anterior, vamos a encontrarnos con un error, ya que los parámetros nombrados no pueden comenzar con `_`. Para ello, debiéramos hacerlo posicional:
+
+```dart
+class GreensAccount {
+  GreensAccount(
+    this._balance, {
+    required this.accountHolder,
+  });
+
+  final String accountHolder;
+  double _balance;
+
+  void buyFor(double amount) {
+    _balance -= amount;
+  }
+
+  void payFor(double amount) {
+    _balance += amount;
+  }
+
+  void getBalance() {
+    if (_balance < 0) {
+      print('$accountHolder: You are in debt. Your balance is: $_balance');
+    } else if (_balance > 0) {
+      print('$accountHolder: You are in credit. Your balance is: $_balance');
+    } else {
+      print('$accountHolder: Your balance is 0');
+    }
+  }
+}
+
+void main() {
+  final mauGreensAccount = GreensAccount(
+    1000,
+    accountHolder: 'Mauro Di Bert',
+  );
+
+  mauGreensAccount._balance = 10000000;
+  mauGreensAccount.getBalance();
+}
+```
+
+Pero aun podemos hacerlo! 😬 Sucede que __las declaraciones privadas están al nivel del archivo, lo que quiere decir que aun pueden ser accedidas desde el mismo archivo.__ Cómo hacemos en Dartpad entonces para crear diferentes archivos y probar esto? No podemos, por lo que vamos a movernos a VSCode lo cual será una excelente manera de transicionar a la segunda parte, más avanzada de nuestro curso! 😍
+
+Empecemos creando los dos archivos en nuestro directorio: `main.dart` y `greens_account.dart` y pegamos nuestro main en el primero y el contenido de la clase en el segundo. Podemos ver un error en nuestro `main.dart` que se extiende si nos paramos sobre el mismo:
+
+![Import missing](6.1_import_missing.png)
+
+Simplemente tenemos que pararnos encima y apretar `cmd` + `.` (Mac) o `ctrl` + `.` (Windows) e importar nuestro archivo. Una vez importado van a ver otro error diciendo que la variable `_balance` no está definida y esto es porque se encuentra oculta para otros archivos que no sean el de nuestra `GreensAccount`.
