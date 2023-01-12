@@ -203,8 +203,79 @@ void main() {
 
 Pero aun podemos hacerlo! 😬 Sucede que __las declaraciones privadas están al nivel del archivo, lo que quiere decir que aun pueden ser accedidas desde el mismo archivo.__ Cómo hacemos en Dartpad entonces para crear diferentes archivos y probar esto? No podemos, por lo que vamos a movernos a VSCode lo cual será una excelente manera de transicionar a la segunda parte, más avanzada de nuestro curso! 😍
 
-Empecemos creando los dos archivos en nuestro directorio: `main.dart` y `greens_account.dart` y pegamos nuestro main en el primero y el contenido de la clase en el segundo. Podemos ver un error en nuestro `main.dart` que se extiende si nos paramos sobre el mismo:
+Empecemos creando los dos archivos en nuestro directorio que llamaremos `main.dart` y `greens_account.dart` y pegamos nuestro `main` en el primero y el contenido de la clase en el segundo. Podemos ver un error en nuestro `main.dart` que se expande si nos paramos sobre el mismo:
 
 ![Import missing](6.1_import_missing.png)
 
-Simplemente tenemos que pararnos encima y apretar `cmd` + `.` (Mac) o `ctrl` + `.` (Windows) e importar nuestro archivo. Una vez importado van a ver otro error diciendo que la variable `_balance` no está definida y esto es porque se encuentra oculta para otros archivos que no sean el de nuestra `GreensAccount`.
+Simplemente tenemos que pararnos encima y apretar `cmd` + `.` (Mac) o `ctrl` + `.` (Windows) e importar nuestro archivo. Una vez importado van a ver otro error diciendo que la variable `_balance` no está definida y esto es porque se encuentra oculta para otros archivos que no sean el de nuestra `GreensAccount`. Pero para algo creamos el método `payFor` solo que ahora no depositaremos millones sino lo que necesitemos pagar y tengamos! 🤣
+
+```dart
+import '6.2_greens_account.dart';
+
+void main() {
+  final mauGreensAccount = GreensAccount(
+    1000,
+    accountHolder: 'Mauro Di Bert',
+  );
+
+  // mauGreensAccount._balance = 10000000; // ☝🏼
+  mauGreensAccount.payFor(1000);
+  mauGreensAccount.getBalance();
+}
+```
+
+También, en lugar del método `getBalance`, podríamos crear un _getter_ para leer solamente el valor de la variable `_balance` y así lograr tener una variable que pueda escribirse y leerse dentro de la misma clase/archivo pero solo leerse por fuera:
+
+```dart
+class GreensAccount {
+  GreensAccount(
+    this._balance, {
+    required this.accountHolder,
+  });
+
+  final String accountHolder;
+  double _balance;
+
+  double get balance => _balance; //👁️
+
+  void buyFor(double amount) {
+    _balance -= amount;
+  }
+
+  void payFor(double amount) {
+    _balance += amount;
+  }
+
+  void getBalance() {
+    if (_balance < 0) {
+      print('$accountHolder: You are in debt. Your balance is: $_balance');
+    } else if (_balance > 0) {
+      print('$accountHolder: You are in credit. Your balance is: $_balance');
+    } else {
+      print('$accountHolder: Your balance is 0');
+    }
+  }
+}
+```
+
+Y leerse de esta manera:
+
+```dart
+import '6.2_greens_account.dart';
+
+void main() {
+  final mauGreensAccount = GreensAccount(
+    1000,
+    accountHolder: 'Mauro Di Bert',
+  );
+
+  // mauGreensAccount._balance = 10000000; // ☝🏼
+  mauGreensAccount.payFor(1000);
+  mauGreensAccount.getBalance();
+  mauGreensAccount.balance;
+}
+```
+
+Este patrón anterior, es muy utilizado en Dart y Flutter y ya vamos a verlo muchas veces así se acostumbran a utilizarlo ya que nos brinda mucha seguridad y orden.
+
+Y finalmente, sepan que pueden hacer privado todo lo que deseen: una variable, un método o una clase.
