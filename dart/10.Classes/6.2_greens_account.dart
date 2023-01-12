@@ -7,7 +7,7 @@ class GreensAccount {
   final String accountHolder;
   double _balance;
 
-  double get balance => _balance;
+  double get balance => _balance; //👁️
 
   void buyFor(double amount) {
     _balance -= amount;
