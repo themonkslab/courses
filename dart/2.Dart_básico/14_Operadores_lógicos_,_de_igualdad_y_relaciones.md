@@ -2,14 +2,12 @@
 
 Los _equality and relational operators_ u operadores de igualdad y relacionales nos permiten comparar expresiones. Todos tienen en común que el resultado será un `bool`:
 
-|Significado|Operador|💀 Pruébenlo!|
-|---------|:-----:|:-----------:|
-|Igual|__`==`__|`print(5==2)`|
-|No igual|__`!=`__|`print(5!=2)`|
-|Mayor que|__`>`__|`print(5>2)`|
-|Menor que|__`<`__|`print(5<2)`|
-|Mayor o igual|__`>=`__|`print(5>=2)`|
-|Menor o igual|__`<=`__|`print(5<=2)`|
+Igual: __`==`__ `print(5==2)`
+No igual: __`!=`__ `print(5!=2)`
+Mayor que: __`>`__ `print(5>2)`
+Menor que: __`<`__ `print(5<2)`
+Mayor o igual: __`>=`__ `print(5>=2)`
+Menor o igual: __`<=`__ `print(5<=2)`
 
 En este caso, utilizamos utilizamos `int` _literals_ pero tengan en cuenta que podemos utilizar las expresiones que queramos y mezclar literales con variables, siempre que sean _compatibles_. 🤨 Fíjense qué pasa si tratan de comparar `print(5 < 2.5);`.
 
@@ -19,11 +17,9 @@ Cómo harían sin embargo, si quisieran comparar múltiples expresiones?
 
 Pueden invertir o combinar _boolean expressions_ (expresiones booleanas: dan como resultado `true` o `false`), utilizando los operadores lógicos:
 
-|Significado|Operador|💀 Pruébenlo!|
-|---------|:-----:|:-----------:|
-|Invierte la expresión|__`!expr`__|`print(!false)`|
-|Retorna `true` si un lado o el otro son `true`. Al encontrar `true` retorna, sin evaluar la expresión siguiente|__`||`__|`print(false||true)`|
-|Retorna `true` si ambos lados retornan true|__`&&`__|`print(false&&true)`|
+- Invierte la expresión: __`!expr`__ `print(!false)`
+- Retorna: `true` si un lado o el otro son `true`. Al encontrar `true` retorna, sin evaluar la expresión siguiente __`||`__ `print(false||true)`
+- Retorna: `true` si ambos lados retornan true __`&&`__ `print(false&&true)` 
 
 Tienen que tener en cuenta que los operadores relacionales tienen precendencia sobre los lógicos, por lo que estos últimos se evalúan al final y ustedes pueden hacer algo como lo siguiente sin la necesidad de usar paréntesis:
 

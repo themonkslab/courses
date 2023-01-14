@@ -2,14 +2,12 @@
 
 Son las operaciones más conocidas a las que les sumamos un par que no utilizamos tan seguido:
 
-|Operación|Símbolo|💀 Pruébenlo!|
-|---------|:-----:|:-----------:|
-|Suma|__`+`__|`print(5+2)`|
-|Resta|__`-`__|`print(5-2)`|
-|Multiplicación|__`*`__|`print(5*2)`|
-|División|__`/`__|`print(5/2)`|
-|División de enteros|__~/__|`print(5~/2)`|
-|Módulo|__`%`__|`print(5%2)`|
+- Suma: __`+`__ `print(5+2)`
+- Resta: __`-`__ `print(5-2)`
+- Multiplicación: __`*`__ `print(5*2)`
+- División: __`/`__ `print(5/2)`
+- División de enteros: __~/__ `print(5~/2)`
+- Módulo: __`%`__ `print(5%2)`
 
 ## Operadores de asignación o _assignment operators_
 
