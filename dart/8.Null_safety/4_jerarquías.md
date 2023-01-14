@@ -1,6 +1,6 @@
 # Jerarquías
 
-Voy a tratar de contárselos de forma simple porque aun hay cosas que no vimos; espero que leyendo tranquilamente se pueda entender. Sino, siempre tienen la posibilidad de sumarse a [nuestro Discord]() y allí preguntar hasta entender! 🤓
+Voy a tratar de contárselos de forma simple porque aun hay cosas que no vimos; espero que leyendo tranquilamente se pueda entender. Sino, siempre tienen la posibilidad de sumarse a [nuestro Discord](https://discord.gg/vpPVf7guPC) y allí preguntar hasta entender! 🤓
 
 El gráfico proveniente de la [documentación sobre null safety en Dart](https://dart.dev/null-safety/understanding-null-safety), muestra cómo era la jerarquía de tipos antes de que se incluyera _null safety_:
 

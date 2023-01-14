@@ -58,7 +58,7 @@ Dart reconoce entre minúsculas y mayúsculas, y los booleanos pueden llevar sol
 
 ## 💪 a imprimir variables
 
-Vamos a ir alternando con algunas ejercitaciones un poco más largas que otras y por ello van a tener un lugar especial dentro del artículo. Recuerden que si quieren más ejercicios, un lugar donde consultar dudas o conocerse con nosotros y otros fanáticos del código, pueden [sumarse a nuestra comunidad gratuita en Discord]()!
+Vamos a ir alternando con algunas ejercitaciones un poco más largas que otras y por ello van a tener un lugar especial dentro del artículo. Recuerden que si quieren más ejercicios, un lugar donde consultar dudas o conocerse con nosotros y otros fanáticos del código, pueden [sumarse a nuestra comunidad gratuita en Discord](https://discord.gg/vpPVf7guPC)!
 
 Cada ejercicio se va a componer de un _requirement_ y una o varias soluciones propuestas para resolverlo. Algunas veces, podremos introducir los pasos que llevamos para lograrlas. Sin embargo, recuerden siempre seguir el método propuesto de:
 

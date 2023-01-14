@@ -10,7 +10,7 @@ Lo más probable, es que estés también aquí porque te interesa aprender [Flut
 
 ## Comunidad
 
-Antes de que sigas, [sumate a nuestra comunidad gratuita en Discord](), donde vas a encontrar un grupo hermoso de personas apasionadas por aprender y crecer en este mundo.
+Antes de que sigas, [sumate a nuestra comunidad gratuita en Discord](https://discord.gg/vpPVf7guPC), donde vas a encontrar un grupo hermoso de personas apasionadas por aprender y crecer en este mundo.
 
 Ahí vas a poder presentarte, hacer preguntas, aprender mientras ayudás a otros y a otras a resolver las suyas y divertirte con personas como vos, apasionadas por aprender y compartir este apasionante mundo!
 
@@ -30,4 +30,4 @@ __Vas a aprender haciendo__ así que tratá de hacer los ejercicios alternativos
 
 ## Respondiendo a tus preguntas
 
-Si hay algo que no entendés, seguí [esta guía]() para tratar de responderte vos mismx en primer lugar (una habilidad que todo programador debe dominar) y sino lo lográs, buscar respuestas de forma respetuosa e inteligente para con el tiempo de los otros y otras.
+Si hay algo que no entendés, seguí [esta guía]() para tratar de responderte vos mismo en primer lugar (una habilidad que todo programador debe dominar) y sino lo lográs, buscar respuestas de forma respetuosa e inteligente para con el tiempo de los otros y otras.

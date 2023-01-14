@@ -185,4 +185,4 @@ Steps to reproduce
 }
 ```
 
-Fíjense que tienen una enorme cantidad de métodos a disposición para el tipo `String`! Pruébenlos! También les recomiendo se sumen a nuestro [Discord]() en donde van a encontrar más ejercicios!
+Fíjense que tienen una enorme cantidad de métodos a disposición para el tipo `String`! Pruébenlos! También les recomiendo se sumen a nuestro [Discord](https://discord.gg/vpPVf7guPC) en donde van a encontrar más ejercicios!
