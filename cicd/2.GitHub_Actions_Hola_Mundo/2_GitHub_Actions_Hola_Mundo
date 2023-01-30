@@ -75,7 +75,7 @@ cd workflows
 nano hello_world.yml
 ```
 
-y escribiremos las siguiente líneas de código (no se preocupen, acá está el [snippet](hola_mundo.yml) para facilitarles la vida :smirk:)
+y escribiremos las siguiente líneas de código (no se preocupen, acá está el [snippet](hola-mundo.yml) para facilitarles la vida :smirk:)
 
 ![hola_mundo_snippet](2.1_hola_mundo.png)
 

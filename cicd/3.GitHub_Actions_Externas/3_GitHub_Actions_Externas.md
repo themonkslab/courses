@@ -13,7 +13,7 @@ cd .github/workflows
 nano acciones_externas.yml
 ```
 
-Luego copiamos las líneas de codigo del [snipet](acciones_externas.yml), las cuales explicaremos a continuación.
+Luego copiamos las líneas de codigo del [snippet](acciones-externas.yml), las cuales explicaremos a continuación.
 
 ![acciones externas explicación](3.1_external_action_explanation.png)
 
