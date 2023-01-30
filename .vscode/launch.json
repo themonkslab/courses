@@ -5,11 +5,16 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Dart & Flutter",
+            "name": "first_dart_project",
+            "cwd": "dart/11.Dart_medio/first_dart_project",
             "request": "launch",
             "type": "dart",
-            "program": "dart/7.Procesamiento_de_datos/2.1_data_processing.dart",
-            "args": ["dart/7.Procesamiento_de_datos/data_to_read.csv"]
+            "program": "bin/first_dart_project.dart",
+            "args": [
+                "1",
+                "2",
+                "3"
+            ]
         }
     ]
 }
