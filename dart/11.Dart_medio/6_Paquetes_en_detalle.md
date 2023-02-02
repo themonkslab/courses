@@ -185,3 +185,5 @@ packages
 ```
 
 __💀 Solución__: [aquí]()
+
+Y para cerrar... vieron que VSCode nos marca un error pero de todas formas podemos ejecutar nuestro programa? Es porque nos quedaron los tests evaluando la función anterior, mal sus `imports` y alguito más. Sería un buen momento para empezar con tests no? 😃

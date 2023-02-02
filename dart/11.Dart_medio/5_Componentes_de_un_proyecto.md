@@ -72,9 +72,31 @@ Observen en su archivo `pubspec.yaml`, dentro de `dev_dependencies:` que la prim
 
 ![Lint rules](5.4_lint_rules.gif)
 
-Ya veremos luego cuando nos adentremos más en mejores prácticas, cómo utilizar otras librerías para el _linting_ o cómo decidir qué reglas sí queremos y cuáles no en nuestros _packages_.
+Pero podemos configurar más este proceso? Sí! En el archivo `analysis_options.yaml`:
 
-Y hablando de mejores prácticas...
+```yaml
+# Primero, inclumos del paquete `package:lints`, lo recomendado.
+# Si queremos algo menos estricto, podemos utilizar el core.yaml y agregar las que querramos.
+include: package:lints/recommended.yaml
+
+# Aquí podemos especificar otras reglas extra como sería el caso de usar trailing commas
+linter:
+  rules:
+    require_trailing_commas: true
+
+# Aquí podemos excluir ciertos archivos del análisis
+analyzer:
+  exclude:
+    - path/to/excluded/files/**
+
+# Para más info, nos manda a:
+# https://dart.dev/go/core-lints
+# https://dart.dev/guides/language/analysis-options
+```
+
+En la sección avanzada de este curso vamos a ver cómo basarnos en un linting más estricto como convención pero por ahora quedo conforme con que conozcan cómo configurarlo para poder ir gradualmente introduciendo mejores prácticas.
+
+Y hablando de ellas, con ustedes, la reina de las mejores prácticas!
 
 ## Tests
 
