@@ -27,7 +27,15 @@ void main() {
 }
 ```
 
-Listo, ya tenemos nuestro primer programa! Ahora... cómo lo ejecutan? Presionen la combinación `cmd/ctrl + j` y les va a aparecer la terminal, sino, hagan lo siguiente:
+Listo, ya tenemos nuestro primer programa! Ahora... cómo lo ejecutan? ✋ Esssssperá! Lo guardaron? Porque si no lo guardaron, les va a salir cualquier cosa! 😂
+
+...
+
+...
+
+...
+
+Ahora sí? Bueno, entonces presionen la combinación `cmd/ctrl + j` y les va a aparecer la terminal, sino, hagan lo siguiente:
 
 1. Muevan su cursor hasta el borde inferior.
 2. Cuando cambie a una flecha, hagan click y manteniendo,
