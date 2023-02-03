@@ -10,9 +10,7 @@ Lo más probable, es que estés también aquí porque te interesa aprender [Flut
 
 ## Comunidad
 
-Antes de que sigas, [sumate a nuestra comunidad gratuita en Discord](https://discord.gg/vpPVf7guPC), donde vas a encontrar un grupo hermoso de personas apasionadas por aprender y crecer en este mundo.
-
-Ahí vas a poder presentarte, hacer preguntas, aprender mientras ayudás a otros y a otras a resolver las suyas y divertirte con personas como vos, apasionadas por aprender y compartir este apasionante mundo!
+Antes de que sigas, [sumate a nuestra comunidad gratuita en Discord](https://discord.gg/vpPVf7guPC), donde vas a encontrar un grupo hermoso de personas apasionadas por aprender y crecer en este mundo, podrás presentarte, hacer preguntas, aprender mientras ayudás a otros y a otras a resolver las suyas y divertirte con personas como vos!
 
 ## Algunas recomendaciones
 
