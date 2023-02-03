@@ -79,6 +79,15 @@ Bien! Vamos a utilizar estos controles y movernos paso a paso, aprendiendo sobre
 
 Ya han debuggeado su primer programa! 👏 La idea es que __de ahora en adelante, cada vez que ejecuten un programa que están escribiendo, utilicen este mecanismo__ para seguir su recorrido. De esta forma no solo van a fortalecer las bases absorviendo el _flow_ en cada ejecución sino que van a tener seguridad de todo lo que sucede y __van a haber adiestrado la herramienta primordial para descubrir bugs de cualquier tipo__.
 
-## Ejecutarlo desde las DevTools
+## Debuggear desde las DevTools
 
-Esto lo vamos a dejar para la última parte de nuestro curso, la sección avanzada!
+<!-- CONT -->
+dart run --pause-isolates-on-start --observe first_package_enhanced.dart
+explicar funcionamiento básico en DevTools con capturas: cómo breakpoints
+
+Hace 4 años programo en Flutter pero me siento nuevo...
+Este curso va a ir evolucionando porque ustedes y nosotros iremos evolucionando y actualizándolo...
+Recién empezando:
+
+- las soluciones ahora y siempre y seguro habrá mejores y estamos para eso
+- fuego paso

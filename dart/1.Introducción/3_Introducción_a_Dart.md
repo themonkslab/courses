@@ -46,6 +46,8 @@ Sepan que esto los va a molestar seguido pero es algo que podrán ir entendiendo
 
 Y esto se va a mantener al momento de ejecutar nuestro programa y antes incluso, a la hora de compilarlo.
 
+<-- CONT | Revisar capítulo 8 introducción | va a romper las bolas seguido. Sepan que mucho puede fallar desde este lugar | Pregúntese si a la primera o la segunda no saben que es, en que pueden tener un problema con null safety. Difícil de interiorizar pero es super importante | Recuerdo las primeras veces con Martín ... | Vamos a ir de a poquito y luego dedicar una sección entera -->
+
 Compi... qué?
 
 ## 🚧 _Compile_

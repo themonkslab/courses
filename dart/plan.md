@@ -7,4 +7,5 @@
 - Luego 12 Andrea / 16 Flutterfly y 13 de Andrea mi versión incluyendo testings
 - Luego sección avanzada del curso: utilizar lint de VGV(<https://github.com/VeryGoodOpenSource/very_good_analysis/tree/main/lib>), 5,6,17, 18, 20
 
+- Good channel: <https://www.youtube.com/@FlutterExplained/videos>
 - Cuando veamos funciones, top level variables y static variables, explicar late 15.00 <https://www.youtube.com/watch?v=ZZ4VVlggIVk>
