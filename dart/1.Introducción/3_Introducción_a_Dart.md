@@ -40,13 +40,13 @@ Esto significa que si no decimos de qué tipo de dato se trata, Dart intentará 
 
 ## 📢 _Sound Null Safety_
 
-Debido a que nos avisará con bombos y trompetas, nos vamos a dar cuenta de la premisa más importante en este tópico y es que __ningún dato puede ser nulo o vacío a no ser que explícitamente así lo definamos.__
+Debido a que nos avisará con bombos y trompetas, nos vamos a dar cuenta de la premisa más importante en este tópico y es que __ningún dato puede ser nulo o vacío a no ser que explícitamente así lo definamos.__ Y esto se va a mantener al momento de ejecutar nuestro programa y antes incluso, a la hora de compilarlo.
 
-Sepan que esto los va a molestar seguido pero es algo que podrán ir entendiendo de forma gradual, sección a sección hasta llegar específicamente a una  destinada absolutamente a ello. Cuando se topen con algún problemita, le den vuelta una o dos veces y no encuentren su porqué, piensen en nulidad, null safety, y todo lo que conocen hasta el momento y absténgase de insultar a familiares cercanos! (Dicho esto desde la propia experiencia en mis primeras veces con el asunto) 🤣
+__Sepan que esto los va a molestar seguido al principio__ pero que es algo que irán interiorizando de forma gradual, sección a sección. De hecho, habrá una en este curso especialmente destinada a _null safety_.
 
-Y esto se va a mantener al momento de ejecutar nuestro programa y antes incluso, a la hora de compilarlo.
+ __Cuando se topen con algún problemita y no encuentren su porqué, piensen en nulidad__, null safety, y todo lo que conocen hasta el momento y absténgase de insultar a familiares cercanos; se los digo desde la propia experiencia! 🤣
 
-Compi... qué?
+Ah! Antes de querer prevenir sus posibles roturas familiares, les mencioné que esto también molestaba a la hora de compilar. Compi... qué?
 
 ## 🚧 _Compile_
 
