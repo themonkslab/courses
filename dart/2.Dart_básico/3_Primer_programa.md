@@ -4,9 +4,11 @@ Como les contamos en el artículo anterior, queremos que aprendan a crear __test
 
 ## Requerimientos?
 
-Como ahora estamos __utilizando _Dartpad_, no contamos con herramientas específicas de testing__ y por ello, vamos a ir cambiando las formas en las que creamos nuestros tests.
+Como ahora estamos __utilizando _Dartpad_, no contamos con herramientas específicas de testing__. Por ello, vamos a ir creando aproximaciones a lo que serían los tests. Y el primer paso para ello, es saber escribir y entender correctamente los _requirements_.
 
-Vamos a crear una serie de reglas llamadas __requerimientos o _requirements_: es lo que queremos que nuestro programa haga__. Vamos a obviar aquí los tests o marcado de errores que ya el mismo lenguaje utiliza. Por ejemplo, si no escribimos el _main method_, sin que escribamos ningún test, el lenguaje nos marca automáticamente el error; esto sucederá en muchos otros casos y es una enorme ayuda cuando escribamos cientos de líneas de código.
+Qué son? Es un enunciado (o una lista de ellos) que dice qué esperamos que nuestro programa haga. Luego, en el futuro cercano (parte intermedia de este curso), vamos a utilizar herramientas de automatización (🤤) que se basarán en dichos requerimientos.
+
+Por ahora, vamos pasito a pasito, saludando a este nuevo mundo en el que nos metemos!
 
 ## _Hello world_ u hola mundo
 
