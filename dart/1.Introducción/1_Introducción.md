@@ -24,7 +24,7 @@ Creemos que si estás acá, es porque estás interesado o interesada en volverte
 
 Para ello, preparamos un camino de aprendizaje pensado de atrás hacia adelante: __vas a aprender a testear como primer paso__, de manera que escribir código de alta calidad sea una extensión de tu cuerpo y puedas __destinar tiempo a lo más divertido, crear__.
 
-Lo más probable, es que estés también aquí porque te interesa aprender [Flutter](https://flutter.dev) y estás en el lugar indicado: para aprender cualquier _Framework_ (marco de trabajo que tiene como objetivo facilitar la solución de problemas que pueden surgir al programar), es imprescindible comprender en profundidad el lenguaje en el que está construido y es por esto que nuestro primer paso para aprender Flutter, es aprender Dart.
+Lo más probable, es que estés también aquí porque te interesa aprender [Flutter](https://flutter.dev) y estás en el lugar indicado: para aprender cualquier _Framework_ (un conjunto de herramientas que se construyen sobre un lenguaje para facilitar la solución de problemas que pueden surgir al programar), es imprescindible comprender en profundidad el lenguaje en el que está construido y es por esto que nuestro primer paso para aprender Flutter, es aprender Dart.
 
 ## Comunidad
 
@@ -46,4 +46,6 @@ __Vas a aprender haciendo__ así que tratá de hacer los ejercicios alternativos
 
 ## Respondiendo a tus preguntas
 
-Si hay algo que no entendés, seguí [esta guía]() para tratar de responderte vos mismo en primer lugar (una habilidad que todo programador debe dominar) y sino lo lográs, buscar respuestas de forma respetuosa e inteligente para con el tiempo de los otros y otras.
+__Si hay algo que no entendés__, seguí [esta guía]() para tratar de responderte vos mismo en primer lugar (una habilidad que todo programador debe dominar) y sino lo lográs, venite al Discord que alguno de nosotros va a estar ahí para darte una mano o por lo menos, sufrir juntos! 🤣
+
+Te vuelvo a recordar porque nunca estará de más, porque nos enseñan desde chiquitos que el equivocarse está mal: __no existe el error si intentamos aprender de él y no hay pregunta tonta__.
