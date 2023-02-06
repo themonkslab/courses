@@ -81,13 +81,4 @@ Ya han debuggeado su primer programa! 👏 La idea es que __de ahora en adelante
 
 ## Debuggear desde las DevTools
 
-<!-- CONT -->
-dart run --pause-isolates-on-start --observe first_package_enhanced.dart
-explicar funcionamiento básico en DevTools con capturas: cómo breakpoints
-
-Hace 4 años programo en Flutter pero me siento nuevo...
-Este curso va a ir evolucionando porque ustedes y nosotros iremos evolucionando y actualizándolo...
-Recién empezando:
-
-- las soluciones ahora y siempre y seguro habrá mejores y estamos para eso
-- fuego paso
+Creo que les tiré ya bastante información y voy a esperar al momento propicio en donde las necesitemos y allí, les cuento cómo hacer! 😃

@@ -1,1 +1,1 @@
-multiply(num a, num b) => a * b;
+num multiply(num a, num b) => a * b;

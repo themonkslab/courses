@@ -1,1 +1,1 @@
-divide(num a, num b) => a / b;
+num divide(num a, num b) => a / b;
