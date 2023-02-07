@@ -260,3 +260,6 @@ void main(List<String> arguments) {
   }
 }
 ```
+
+Genial! Ya tendríamos todo listo, salvo que nuestros tests están fallando! Qué
+mejor lugar para empezar un próximo capítulo que el teniendo un test fallador! 🤣
