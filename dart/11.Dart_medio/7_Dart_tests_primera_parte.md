@@ -47,7 +47,7 @@ Recuerdan que les dije iba a llegar el momento de aprenderlo? Llegó! Justo en e
 
 1. Primero que nada, recuerden actualizar el nombre de todos los archivos y funciones. Deberíamos ver nuestro árbol de archivos y carpetas sin errores salvo la carpeta `/test`.
 
-2. Nos basamos entonces en el `5.1_rock_paper_scissors.dart` para van a montar la lógica que le de una bienvenida al usuario y le ofrezca qué opciones tiene nuestra calculadora. Vamos por partes con este punto:
+2. Nos basamos entonces en el `5.1_rock_paper_scissors.dart` para  montar la lógica que le de una bienvenida al usuario y le ofrezca qué opciones tiene nuestra calculadora. Vamos por partes con este punto:
 
 __La bienvenida al usuario__ podría ser algo así:
 
@@ -76,7 +76,7 @@ void main(List<String> arguments) {
   while (true) {
     stdout.write('Enter FIRST number or "q" to quit:\n');
     userInput = stdin.readLineSync();
-    if (userInput?.trim() == 'q') return;
+    if (userInput?.trim() == 'q') return; // recuerden que el trim lo utilizamos para eliminar cualquier espacio en blanco antes o después del caracter que queremos
   }
 }
 ```
@@ -99,17 +99,23 @@ Por ahora en lo único que quiero que se concentren es en la línea que dice `Th
 
 ![Link to DevTools](7.1_link_to_dev_tools.gif)
 
-Hagan click mientras presionan `cmd` o `ctrl` entonces y les va a abrir una ventana el último navegador con el que estuvieron interactuando y van a poder ver las flamantes DevTools y allí y por ahora, solamente vamos a trabajar con el debugger, por lo que vayan a dicha pestaña:
+Hagan click mientras presionan `cmd` o `ctrl` entonces y les va a abrir en una
+ventana del último navegador con el que estuvieron interactuando, las flamantes
+DevTools y allí y por ahora, solamente vamos a trabajar con el debugger:
 
 ![Opening DevTools](7.2_opening_dev_tools.gif)
 
-Una vez allí, pueden ver que es muy similar a lo que teníamos en VSCode: a la izquierda los paneles 'Call Stack', 'Variables' y 'Breakpoints' (fíjense que están inverditos a como solemos verlo en VSCode pero siguen siendo los mismos paneles) y a la derecha la 'Barra de Control' solo que ahora figura el nombre completo de lo que cada botón realiza y luego algo que en VSCode tenemos en el panel de 'Breakpoints' que es cuándo deseamos que nuestro código se detenga (y varias de estas cosas ya las veremos pronto):
+Pueden ver que es muy similar a lo que teníamos en VSCode: a la izquierda los paneles 'Call Stack', 'Variables' y 'Breakpoints' (fíjense que están invertidos a como solemos verlo en VSCode pero siguen siendo los mismos paneles) y a la derecha la 'Barra de Control' solo que ahora figura el nombre completo de lo que cada botón realiza y luego algo que en VSCode tenemos en el panel de 'Breakpoints' que es cuándo deseamos que nuestro código se detenga (y varias de estas cosas ya las veremos pronto):
+
+Que el código...
 
 1. _Don't stop on exceptions_: no pare nunca, no importa si hay _exceptions_ o no.
-2. _Stop on uncaught exceptions_: para solamente en aquellas _exceptions_ que no tengamos controladas.
-3. _Stop on all exceptions_: para en todas las _exceptions_ que se produzcan.
+2. _Stop on uncaught exceptions_: pare solamente en aquellas _exceptions_ que no
+   tengamos controladas con nuestro propio código.
+3. _Stop on all exceptions_: pare en todas las _exceptions_ que se produzcan.
 
-Suelo utilizarlo en _Stop on all exceptions_ para descubrir cosas que sino, no descubro pero entiendo que es muy parecido a _Stop on uncaught exceptions_; vean qué les va pareciendo!
+Suelo utilizarlo en _Stop on uncaught exceptions_ ya que se estaría deteniéndose
+en _exceptions_ que no tengamos controladas per es algo ya veremos pronto!
 
 ### Seteando _breakpoints_
 
@@ -121,4 +127,136 @@ Vamos a poner uno en la línea 14 y vamos a darle a `Resume`. En su terminal com
 
 Una vez allí, introduzcan un número cualquiera, por ejemplo el 3 y luego `enter`. Van a observar cómo se movió hasta la línea 14, que es donde lo detuvimos y luego en nuestra terminal de VSCode salieron un par de cosas (`vm-service: isolate (2909629860491151) 'main' has no debugger attached and is paused.  Connect to the Dart VM service at <http://127.0.0.1:8181/JLOuvbvZb6g=/> to debug.`) que básicamente nos dice que está pausado. Lo imporante de aquí es que nos permite asegurarnos de que está leyendo correctamente lo que introdujimos en la terminal, si vamos al panel 'Variables'.
 
-Opriman una vez más en `Resume` y verán nuevamente el pedido de _input_. Prueben introducir la letra 'q' y ver si efectiamente el programa se detiene haciendo nuevamente click en `Resume`. Por alguna razón que aun desconozco, 😅, tienen que volver a hacer click en `Resume` y allí van a ver que su programa finalizó.
+Opriman una vez más en `Resume` y verán nuevamente el pedido de _input_. Prueben introducir la letra 'q' y ver si efectivamente el programa se detiene haciendo nuevamente click en `Resume`. Por alguna razón que aun desconozco, 😅, tienen que volver a hacer click en `Resume` y allí van a ver que su programa finalizó.
+
+### Continuando con la solución
+
+Bien! Ya nos aseguramos que podemos cortar nuestra calculadora cuando queremos.
+Vamos a ir más rápido ahora y si están siguiendo esto paso a paso sin haber
+hecho el ejercicio, 💀 pruben avanzar ustedes pidiendo todas las variables que
+necesitamos: número 1, número 2 y operación y despidiéndonos del usuario:
+
+```dart
+import 'dart:io';
+
+void main(List<String> arguments) {
+  print('-----------------------------------');
+  print(
+      'Hi! 😃 I am your calculator.\nPlease enter number a, b, and the operation you want to perform.\nThe possible ones are (a)dd | (s)ubsctract | (m)ultiply | (d)ivide\nEnjoy!');
+  print('-----------------------------------');
+
+  while (true) {
+    String? a;
+    num? numA;
+    String? b;
+    num? numB;
+    String? operation;
+
+    do {
+      stdout.write('Enter FIRST number or "q" to quit: ');
+      a = stdin.readLineSync();
+      if (a?.trim() == 'q') return;
+      numA = num.tryParse(a!);
+    } while (numA == null);
+
+    do {
+      stdout.write('Enter SECOND number or "q" to quit: ');
+      b = stdin.readLineSync();
+      if (b?.trim() == 'q') return;
+      numB = num.tryParse(b!);
+    } while (numB == null);
+
+    do {
+      stdout.write(
+          'Select OPERATION\n(a)dd\n(s)ubsctract\n(m)ultiply\n(d)ivide\nor "q" to quit: ');
+      operation = stdin.readLineSync();
+      if (operation?.trim() == 'q') return print('Thanks for the use! ❤️');
+    } while (operation != null && operation.trim() == 'q');
+  }
+}
+```
+
+Ahora podemos ver paso a paso y cuando lo necesitamos en nuestras DevTools lo
+que está sucediendo!
+
+Vamos ahora a crear una función que imprima el resultado de sumar, restar,
+multiplicar y dividir, dentro de nuestra librería (`/lib`). Recuerden que lo
+hacemos de forma separada porque una función debería tener solamente un
+propósito y mantenerse pura, sin efectos secundarios:
+
+```dart
+import 'package:calculator/calculator.dart' as calculator;
+
+void printSumOf(num a, num b) =>
+    print('= The result of adding $a and $b is: ${calculator.add(a, b)}');
+void printSubstrctionOf(num a, num b) => print(
+    '= The result of substracting $a to $b is: ${calculator.substract(a, b)}');
+void printMultiplicationOf(num a, num b) => print(
+    '= The result of multiplying $a and $b is: ${calculator.multiply(a, b)}');
+void printDivisionOf(num a, num b) =>
+    print('= The result of dividing $a by $b is: ${calculator.divide(a, b)}');
+
+```
+
+Y vamos a agregar esto en nuestro programa, poniendo un saludo al final:
+
+```dart
+import 'dart:io';
+
+import 'package:first_package_enhanced/first_package_enhanced.dart'
+    as first_package_enhanced;
+
+void main(List<String> arguments) {
+  print('-----------------------------------');
+  print(
+      'Hi! 😃 I am your calculator.\nPlease enter number a, b, and the operation you want to perform.\nThe possible ones are (a)dd | (s)ubsctract | (m)ultiply | (d)ivide\nEnjoy!');
+  print('-----------------------------------');
+
+  while (true) {
+    String? a;
+    num? numA;
+    String? b;
+    num? numB;
+    String? operation;
+
+    do {
+      stdout.write('Enter FIRST number or "q" to quit: ');
+      a = stdin.readLineSync();
+      if (a?.trim() == 'q') return;
+      numA = num.tryParse(a!);
+    } while (numA == null);
+
+    do {
+      stdout.write('Enter SECOND number or "q" to quit: ');
+      b = stdin.readLineSync();
+      if (b?.trim() == 'q') return;
+      numB = num.tryParse(b!);
+    } while (numB == null);
+
+    do {
+      stdout.write(
+          'Select OPERATION\n(a)dd\n(s)ubsctract\n(m)ultiply\n(d)ivide\nor "q" to quit: ');
+      operation = stdin.readLineSync();
+      if (operation?.trim() == 'q') return print('Thanks for the use! ❤️');
+    } while (operation != null && operation.trim() == 'q');
+
+    switch (operation) {
+      case 'a':
+        first_package_enhanced.printSumOf(numA, numB);
+        break;
+      case 's':
+        first_package_enhanced.printSubstrctionOf(numA, numB);
+        break;
+      case 'm':
+        first_package_enhanced.printMultiplicationOf(numA, numB);
+        break;
+      case 'd':
+        first_package_enhanced.printDivisionOf(numA, numB);
+        break;
+    }
+    print('-----------------------------------');
+    print("Let's go again! 🧮");
+    print('-----------------------------------');
+  }
+}
+```
