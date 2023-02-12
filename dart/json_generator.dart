@@ -2,20 +2,25 @@ import 'dart:convert';
 import 'dart:io';
 
 void main() async {
-  // Get course from local files
-  final course = await createDartCourse();
+  final list = List.of({'dart', 'cicd'});
+
+  for (var item in list) {
+    // Get course from local files
+  final course = await createDartCourse(item);
   // Create file to store a json
-  final filename = 'dart_course.txt';
+  final filename = '${item}_course.txt';
   // Encode it
   final jsonCourse = json.encode(course);
   // Write the file
   await File(filename).writeAsString(jsonCourse);
+  }
+  
 }
 
-Future<List<dynamic>> createDartCourse() async {
+Future<List<dynamic>> createDartCourse(String path) async {
   // Save directories as Directory in List, without 'assets' directory
   final directories = <Directory>[];
-  final dir = Directory('./dart');
+  final dir = Directory('./$path');
 
   final List<FileSystemEntity> entities = await dir.list().toList();
   for (var entity in entities) {
@@ -32,9 +37,9 @@ Future<List<dynamic>> createDartCourse() async {
   for (var directory in directories) {
     final articles = [];
     final directoryNameWithUnderscore =
-        (directory.path.replaceAll('./dart/', ''));
+        (directory.path.replaceAll('./$path/', ''));
     final directoryName =
-        (directory.path.replaceAll('./dart/', '')).replaceAll('_', ' ');
+        (directory.path.replaceAll('./$path/', '')).replaceAll('_', ' ');
 
     final List<FileSystemEntity> subEntities = await directory.list().toList();
     for (var entity in subEntities) {
@@ -47,7 +52,7 @@ Future<List<dynamic>> createDartCourse() async {
         }
         if (articleExtension == '.md') {
           final articleName = (entity.path
-              .replaceAll('./dart/$directoryNameWithUnderscore/', '')
+              .replaceAll('./$path/$directoryNameWithUnderscore/', '')
               .replaceAll('_', ' ')
               .replaceFirst(' ', '.')
               .replaceAll('.md', ''));
@@ -57,7 +62,7 @@ Future<List<dynamic>> createDartCourse() async {
 
           final contentUrl = entity.path.replaceFirst('.', baseContentUrl);
           final articlePath = entity.path
-              .replaceFirst('./dart/', '')
+              .replaceFirst('./$path/', '')
               .replaceAll('/', '_')
               .replaceAll('.md', '');
 
@@ -67,7 +72,7 @@ Future<List<dynamic>> createDartCourse() async {
             'description': '',
             // example: https://raw.githubusercontent.com/themonkslab/courses/main/dart/1.introduccion/1.2_que_esperamos_nosotros.md
             'contentUrl': contentUrl,
-            'author': 'Mau Di Bert',
+            'author': 'The Monkslab',
             'published': DateTime.now().toString(),
           });
         }
@@ -78,7 +83,7 @@ Future<List<dynamic>> createDartCourse() async {
     // for (var i = 0; i < articles.length; i++) {
     //   articles[i]['path'] = 'article_$i';
     // }
-    final sectionPath = directory.path.replaceFirst('./dart/', '');
+    final sectionPath = directory.path.replaceFirst('./$path/', '');
     sections.add({
       'path': sectionPath,
       'title': directoryName,
