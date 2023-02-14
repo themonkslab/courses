@@ -1,0 +1,15 @@
+name: External Actions
+
+on: [push]
+
+jobs:
+  run-external-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello world Dart
+        id: hw
+        uses: EugenioTesio/hello-world-dart-action@v1.0
+        with:
+          who-to-greet: Mauro
+      - name: Log output
+        run: echo ${{ steps.hw.outputs.time }}

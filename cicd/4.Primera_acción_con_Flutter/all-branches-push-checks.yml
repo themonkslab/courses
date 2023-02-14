@@ -1,0 +1,33 @@
+name: PR checks
+
+on:
+  push:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: subosito/flutter-action@v2
+      with:
+        channel: stable
+
+    # Useful information
+    - run: flutter --version
+
+    # Install dependencies
+    - run: flutter pub get
+
+    # check for issues with formatting
+    - run: flutter format --line-length=80 --set-exit-if-changed .
+
+    # In case you need to run the code generator, uncomment this block
+    # Run code generator
+    # - run: flutter pub run build_runner build
+
+    # check for issues through static analysis
+    - run: flutter analyze
+
+    # Run tests
+    - run: flutter test
