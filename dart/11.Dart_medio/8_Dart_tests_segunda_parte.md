@@ -61,3 +61,236 @@ Estos tests unitarios deberían ser:
   tests o servicios, como el estar conectado a internet.
 - Rápidos: si están escribiendo uno que demora, hay algo que no está bien
   escrito.
+
+## Manos a la obra
+
+Qué les parece si escribimos algo bien sencillo en donde les pueda mostrar lo
+anterior?
+
+Vamos a ir dentro del _package_ `calculator` y como verán, no tiene una carpeta
+`tests`. Vamos a crearla en el directorio raíz, a la altura de `/lib` y luego
+crear un test para cada una de las funciones que queremos testear. Para que los
+tests sean reconocidos por Dart, su nombre tiene que terminar en `_test.dart` y
+para mantener el orden, copiamos el _path_ o ubicación del archivo que queremos
+testear de nuestra librería (que se encuentra `/lib`), en el directorio de
+tests. Veríamos algo así:
+
+![Tests directory](8.1_tests_directory.png)
+
+Vamos a ir al primero de ellos, el `add_test.dart`.
+
+Para poder crear un test unitario que __inicialice una pequeña parte de nuestro
+programa__, tenemos que entonces agregar un `main() {}` en donde escribiremos el
+test; cuando lo hagan, van a ver enseguida que encima de dicho `main` les
+aparecen los comandos para correrlo en VSCode.
+
+Una vez allí, vamos a introducir la __estructura básica de un test unitario__:
+`test('...aquí vendrá la descripción...', () {})`. Y observen que cuando
+escriban la palabra test que vendría a ser una función, no se las va a reconocer
+y van a tener que importar el paquete de tests:
+
+```dart
+import 'package:test/test.dart';
+
+main() {
+  test('', (){});
+}
+```
+
+En la __descripción__ , tenemos que responder a la pregunta específica de qué
+hace este test. Vamos a hacer un ejemplo de prueba que sin relacionarlo aún con
+la función `add` que queremos testar para que entiendan y puedan ver claramente
+la estructura.
+
+Como vamos a arrancar con un ejemplo muy sencillo, sencilla será
+la descripción:
+
+```dart
+main() {
+  test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {});
+}
+```
+
+Ya con esto podemos ver qué queremos hacer verdad? Paso siguiente, vamos a
+escribir comentarios para dejar en claro cada una de las etapas de nuestro test,
+obviamente dentro de las llaves o función anónima que va a ser llamada cuando se
+ejecute la función `test`. Y aquí __déjenme hacer un paréntesis para recordarles
+qué era un _Callback_: es una función que va a ser pasada como parámetro para
+luego ser ejecutada por la función que recibe dicho parámetro.__
+
+Más simple: `test` es una función. El primer parámetro (pueden ver esto si se paran encima) es la _description_, es un `dynamic` que nos permite explicar qué va a hacer nuestro test. El segundo parámetro es el _body_ o cuerpo, (`dynamic
+Function()body`) y refiere a una función que puede devolver cualquier valor pero
+que va a ejecutarse en algún momento dentro de `test`.
+
+Dicho lo anterior, vamos a poner comentarios para separar las etapas en la que
+el test va a desarrollarse:
+
+```dart
+import 'package:test/test.dart';
+
+main() {
+  test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {
+    // Arrange
+
+    // Act
+
+    // Assert
+  });
+}
+```
+
+Qué vamos a hacer en __arrange__? En la _description_, aparece una variable
+llamada `a` que contiene 1 como valor. Empecemos por eso:
+
+```dart
+import 'package:test/test.dart';
+
+main() {
+  test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {
+    // Arrange
+    var a = 1;
+    // Act
+
+    // Assert
+  });
+}
+```
+
+Luego en __act__ qué haríamos? Qué está sucediendo acá? Porque hasta ahora solo
+presentamos el personaje de la historia pero no hizo nada! 🤓 Vamos a hacer que
+alguna criatura mágica agregue 1 a la variable `a`:
+
+```dart
+import 'package:test/test.dart';
+
+main() {
+  test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {
+    // Arrange
+    var a = 1;
+    // Act
+    var result = a + 1;
+    // Assert
+  });
+}
+```
+
+Genial! Ya tenemos un `result` de ese acto! Qué haremos entonces en __assert__?
+Vamos a afirmar, esperar, que dicho resultado equivalga al valor 2. Cómo lo
+hacemos? Con una función que no vimos hasta ahora y será la santa madre de todos
+los tests, la función `expect`:
+
+```dart
+import 'package:test/test.dart';
+
+main() {
+  test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {
+    // Arrange
+    var a = 1;
+    // Act
+    var result = a + 1;
+    // Assert
+    expect(result, 2);
+  });
+}
+```
+
+Fíjense que aun no les expliqué que es el `expect` pero díganme si __no es bien
+clarito?__ Acá me tomé el atrevimiento de escribirles la descripción en español
+porque quería que fuera un ejemplo muy sencillo pero recuerden que todo el
+código debe estar escrito en inglés por un estándar de industria.
+
+El __`expect` es otra función del paquete test que si se paran arriba y se
+concentran en lo que necesitamos por ahora (práctica que quiero que hagan muy
+seguido para poder entender la construcción de las cosas que utilizamos), van a
+ver que recibe dos parámetros fundamentales: `actual` y `matcher`.__ Ambos, son
+dinámicos por lo que le podríamos pasar lo siguiente y varias cosas más:
+
+- _Variables_: `expect(a,b)`.
+- _Literals_: `expect(1,1)` o `expect('Mau', 'Mau')` o `expect([], [])`.
+- _Functions_: `expect(result, equals(2))`.
+
+En nuestro caso, lo podemos entender fácilmente: esperamos que el resultado
+(`result`), sea 2. Díganme si no es simple al dividirlo en pedacitos pequeños y
+hermoso a la vez! 😍
+
+Y qué pasa si se quieren asegurar de los pasos que van realizando a medida que
+ejecutan el test? Así es! Lo pueden correr en modo `debug`; una verdadera
+delicia! 🤤
+
+Vamos entonces ahora, a testear lo que nos compete: vamos a testear nuestro
+paquete `calculator`.
+
+### Testeando la calculadora
+
+Empecemos en el test en el que estamos, borremos el contenido de cada una de las
+etapas pero dejemos los comentarios para acostumbrarnos a dividirlas y vaciemos
+la descripción
+
+```dart
+import 'package:test/test.dart';
+
+main() {
+  test('', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+}
+```
+
+Deberíamos utilizar cada uno de nuestros tests, como un __caso de uso__ (_use
+case_). Un caso de uso es __una las formas en la que la pequeña porción de
+código que estamos testeando, se comporta según algo que hagamos.__
+
+Si estamos por ejemplo testeando la función suma, podríamos probar:
+
+- Qué pasa cuando sumamos dos `int` positivos?
+- Qué pasa cuando sumamos un `int` positivo y otro negativo?
+- Qué pasa cuando sumamos dos `int` negativos?
+- Y cuando sumamos `double`?
+
+En el caso de nuestra suma, nuevamente, puede parecer bastante obvio, pero ya
+van a ver cómo resulta útil entender este procedimiento de determinar casos de
+uso ahora que es obvio, para fijar el proceso de test propiamente dicho; en
+casos más complejos ya lo tendrán interiorizado y van a poder abocarse a la
+complejidad!
+
+Entonces lo que vamos a hacer es __crear un test para cada caso de uso__ y así
+el primero podría ser `test('add 1 to 2, results in 3', (){})`. 💀 Vayan a
+escribir los otros!
+
+Listo? Se verían algo así los míos y digo los míos, porque cada vez más nos
+adentramos en la tierra de la hermosa diversidad, pudiendo cada uno proponer
+distintos ejemplos, cada uno con su belleza y poder; aprendamos de cada uno de
+ellos y nos volvamos mejores (pequeño manifiesto filtrado 🤣):
+
+```dart
+import 'package:test/test.dart';
+
+main() {
+  test('add 1 to 2, results in 3', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+  test('add 1 to -2, results in -1', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+  test('add -1 to -2, results in -3', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+  test('add 1.5 to 2.5, results in 4.0', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+}
+```
+
+Ya tenemos todos los elementos para testear oficialmente nuestra función `add`.
+💀 Vayan ustedes y prueben cómo testear cada uno de estos casos, sin olvidarse
+de importar nuestra propia función y no una del paquete `math` de Dart:
