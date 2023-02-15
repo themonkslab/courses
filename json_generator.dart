@@ -7,8 +7,13 @@ void main() async {
   for (var item in list) {
     // Get course from local files
     final course = await createCourseFromPath(item);
+    // Create generator folder
+    var generatorDirectory = Directory('generator');
+    if (!await generatorDirectory.exists()) {
+      await generatorDirectory.create();
+    }
     // Create file to store a json
-    final filename = '${item}_course.json';
+    final filename = '${generatorDirectory.path}/${item}_course.json';
     // Encode it
     final jsonCourse = json.encode(course);
     // Write the file
