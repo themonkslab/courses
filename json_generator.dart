@@ -6,18 +6,18 @@ void main() async {
 
   for (var item in list) {
     // Get course from local files
-  final course = await createDartCourse(item);
-  // Create file to store a json
-  final filename = '${item}_course.txt';
-  // Encode it
-  final jsonCourse = json.encode(course);
-  // Write the file
-  await File(filename).writeAsString(jsonCourse);
+    final course = await createCourseFromPath(item);
+    // Create file to store a json
+    final filename = '${item}_course.txt';
+    // Encode it
+    final jsonCourse = json.encode(course);
+    // Write the file
+    await File(filename).writeAsString(jsonCourse);
   }
   
 }
 
-Future<List<dynamic>> createDartCourse(String path) async {
+Future<List<dynamic>> createCourseFromPath(String path) async {
   // Save directories as Directory in List, without 'assets' directory
   final directories = <Directory>[];
   final dir = Directory('./$path');
