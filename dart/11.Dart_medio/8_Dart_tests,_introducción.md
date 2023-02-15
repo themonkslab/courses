@@ -148,7 +148,7 @@ import 'package:test/test.dart';
 main() {
   test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {
     // Arrange
-    var a = 1;
+    const a = 1;
     // Act
 
     // Assert
@@ -166,7 +166,7 @@ import 'package:test/test.dart';
 main() {
   test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {
     // Arrange
-    var a = 1;
+    const a = 1;
     // Act
     var result = a + 1;
     // Assert
@@ -185,7 +185,7 @@ import 'package:test/test.dart';
 main() {
   test('afirma que `a` de valor 1, resulta en 2 cuando se le agrega 1', () {
     // Arrange
-    var a = 1;
+    const a = 1;
     // Act
     var result = a + 1;
     // Assert
@@ -306,8 +306,8 @@ import 'package:test/test.dart';
 main() {
   test('add 1 to 2, results in 3', () {
     // Arrange
-    var a = 1;
-    var b = 2;
+    const a = 1;
+    const b = 2;
     // Act
     var result = add(a, b);
     // Assert
@@ -350,8 +350,8 @@ import 'package:test/test.dart';
 main() {
   test('add 1 to 2, results in 3', () {
     // Arrange
-    var a = 1;
-    var b = 2;
+    const a = 1;
+    const b = 2;
     // Act
     var result = add(a, b);
     // Assert
@@ -400,8 +400,8 @@ import 'package:test/test.dart';
 main() {
   test('add 1 to 2, results in 3', () {
     // Arrange
-    var a = 1;
-    var b = 2;
+    const a = 1;
+    const b = 2;
     // Act
     var result = add(a, b);
     // Assert
@@ -409,8 +409,8 @@ main() {
   });
   test('add 1 to -2, results in -1', () {
     // Arrange
-    var a = 1;
-    var b = -2;
+    const a = 1;
+    const b = -2;
     // Act
     var result = add(a, b);
     // Assert
@@ -418,8 +418,8 @@ main() {
   });
   test('add -1 to -2, results in -3', () {
     // Arrange
-    var a = -1;
-    var b = -2;
+    const a = -1;
+    const b = -2;
     // Act
     var result = add(a, b);
     // Assert
@@ -427,8 +427,8 @@ main() {
   });
   test('add 1.5 to 2.5, results in 4.0', () {
     // Arrange
-    var a = 1.5;
-    var b = 2.5;
+    const a = 1.5;
+    const b = 2.5;
     // Act
     var result = add(a, b);
     // Assert
