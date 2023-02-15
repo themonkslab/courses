@@ -1,5 +1,5 @@
 
-# Dart tests segunda parte
+# Dart tests, introducción
 
 Ahora que ya tienen una muy buena base para entender cómo esto va funcionando,
 abramos el paquete `calculator` que creamos (ya no dije proyecto! 🥳) y vamos a
@@ -249,20 +249,20 @@ Si estamos por ejemplo testeando la función suma, podríamos probar:
 - Qué pasa cuando sumamos dos `int` negativos?
 - Y cuando sumamos `double`?
 
-En el caso de nuestra suma, nuevamente, puede parecer bastante obvio, pero ya
-van a ver cómo resulta útil entender este procedimiento de determinar casos de
+En el caso de nuestra suma, nuevamente puede parecer bastante obvio, pero ya
+van a ver lo útil que resulta entender este procedimiento de determinar casos de
 uso ahora que es obvio, para fijar el proceso de test propiamente dicho; en
 casos más complejos ya lo tendrán interiorizado y van a poder abocarse a la
-complejidad!
+complejidad.
 
 Entonces lo que vamos a hacer es __crear un test para cada caso de uso__ y así
 el primero podría ser `test('add 1 to 2, results in 3', (){})`. 💀 Vayan a
 escribir los otros!
 
-Listo? Se verían algo así los míos y digo los míos, porque cada vez más nos
+Listo? __Se verían algo así los míos y digo los míos, porque cada vez más nos
 adentramos en la tierra de la hermosa diversidad, pudiendo cada uno proponer
 distintos ejemplos, cada uno con su belleza y poder; aprendamos de cada uno de
-ellos y nos volvamos mejores (pequeño manifiesto filtrado 🤣):
+ellos y nos volvamos mejores__ (pequeño manifiesto filtrado 🤣):
 
 ```dart
 import 'package:test/test.dart';
@@ -291,6 +291,151 @@ main() {
 }
 ```
 
-Ya tenemos todos los elementos para testear oficialmente nuestra función `add`.
-💀 Vayan ustedes y prueben cómo testear cada uno de estos casos, sin olvidarse
-de importar nuestra propia función y no una del paquete `math` de Dart:
+Ahora bien, voy a utilizar el primero de los tests para ejemplificar el proceso
+y luego ustedes pueden ir solitos con el resto de los tests para la suma.
+
+Primero, voy a seguir los pasos. Y quiero señalar aquí es si bien no es
+necesario escribir todas las variables, guardar el resultado y al final hacer el
+chequeo, que bien podríamos hacerlo más rápido y suscinto en una sola línea y
+estar testeando la función, es importante hacer todo el proceso para fijarlo:
+
+```dart
+import 'package:calculator/calculator.dart';
+import 'package:test/test.dart';
+
+main() {
+  test('add 1 to 2, results in 3', () {
+    // Arrange
+    var a = 1;
+    var b = 2;
+    // Act
+    var result = add(a, b);
+    // Assert
+    expect(result, 3);
+  });
+  test('add 1 to -2, results in -1', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+  test('add -1 to -2, results in -3', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+  test('add 1.5 to 2.5, results in 4.0', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+}
+```
+
+Si ustedes corren estos tests, verían en su 'DEBUG CONSOLE' en VSCode, lo
+siguiente:
+
+![Tests results](8.2_tests_results.png)
+
+Allí pueden ver que todos nuestros tests fueron exitosos, aunque haya varias
+cosas que no entienden aun. Pero ustedes me van a decir: 'si solamente
+escribimos uno'? Y en realidad lo que hicimos fue a uno de ellos le agregamos el
+`expect`; el resto siguen siendo funciones y corren de forma exitosa. Cuándo no
+lo hacen? Cuando falla nuestro test? Cuando la función `expect` no produce el
+resultado esperado. Por ejemplo:
+
+```dart
+import 'package:calculator/calculator.dart';
+import 'package:test/test.dart';
+
+main() {
+  test('add 1 to 2, results in 3', () {
+    // Arrange
+    var a = 1;
+    var b = 2;
+    // Act
+    var result = add(a, b);
+    // Assert
+    expect(result, 4); // 👁️
+  });
+  test('add 1 to -2, results in -1', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+  test('add -1 to -2, results in -3', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+  test('add 1.5 to 2.5, results in 4.0', () {
+    // Arrange
+    // Act
+    // Assert
+  });
+}
+```
+
+Aquí lo estamos haciendo fallar para que podamos ver cómo se entiende un fallo:
+
+![Tests fallando](8.3_tests_fallando.png)
+
+Ahora sí ya tenemos todos los elementos para testear oficialmente nuestra
+función `add`. 💀 Vayan ustedes y prueben cómo testear cada uno de estos casos,
+sin olvidarse de importar nuestra propia función y no una del paquete `math` de
+Dart.
+
+...
+
+...
+
+...
+
+Quería asegurarme de que se hayan tomado el tiempo de hacerlo ustedes primero!
+🤣
+
+```dart
+import 'package:calculator/calculator.dart';
+import 'package:test/test.dart';
+
+main() {
+  test('add 1 to 2, results in 3', () {
+    // Arrange
+    var a = 1;
+    var b = 2;
+    // Act
+    var result = add(a, b);
+    // Assert
+    expect(result, 3);
+  });
+  test('add 1 to -2, results in -1', () {
+    // Arrange
+    var a = 1;
+    var b = -2;
+    // Act
+    var result = add(a, b);
+    // Assert
+    expect(result, -1);
+  });
+  test('add -1 to -2, results in -3', () {
+    // Arrange
+    var a = -1;
+    var b = -2;
+    // Act
+    var result = add(a, b);
+    // Assert
+    expect(result, -3);
+  });
+  test('add 1.5 to 2.5, results in 4.0', () {
+    // Arrange
+    var a = 1.5;
+    var b = 2.5;
+    // Act
+    var result = add(a, b);
+    // Assert
+    expect(result, 4);
+  });
+}
+```
+
+Espectacular! Ya hicieron sus propios tests! Esto es excitante! Quédense que se
+vienen cosas más hermosas cada nuevo capítulo!
