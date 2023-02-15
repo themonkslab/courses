@@ -8,7 +8,7 @@ void main() async {
     // Get course from local files
     final course = await createCourseFromPath(item);
     // Create file to store a json
-    final filename = '${item}_course.txt';
+    final filename = '${item}_course.json';
     // Encode it
     final jsonCourse = json.encode(course);
     // Write the file
