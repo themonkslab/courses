@@ -6,8 +6,8 @@ luego escribir nuestro código o bien terminar de escribirlo. Para entenderlo,
 vamos a ejemplificarlo.
 
 Vamos a seguir con nuestra amada calculadora pero ahora van a entrar a la
-función de resta (`lib/src/substract.dart`)y van a borrar la única línea de
-código que tiene, como si nunca hubiera existido.
+función de resta (`lib/src/substract.dart`) y van a borrar la única línea de
+código que tiene como si nunca hubiera existido.
 
 Paso siguiente, van a ingresar al archivo que creamos para testear esa función
 (`test/src/substract_test.dart`) y quiero que escriban los casos de uso que una
@@ -43,9 +43,10 @@ main() {
 }
 ```
 
-Ahora prestemos atención: ustedes borraron la función no hay absolutamente nada
-allí. Vamos a crear el test del primer caso y va a empezar a fallar aun sin
-ejecutarlo o por lo menos, marcarnos ciertos errores:
+Ahora prestemos atención: ustedes borraron la función que estaba en
+`lib/src/substract.dart`y no hay absolutamente nada allí. Vamos a crear el test
+del primer caso y va a empezar a fallar aun sin ejecutarlo o por lo menos,
+marcarnos ciertos errores:
 
 ![No function](9_1.no_function.png)
 
@@ -70,7 +71,7 @@ enteros (`1` y `2` en nuestro test). Como la estamos llamando con argumentos
 pero la función no los espera, nos dice que le pasamos demasiados argumentos!
 Que no esperaba ninguno! 🤣
 
-Vamos a entonces agregarle la posibilidad de que reciba argumentos y
+Vamos entonces a agregarle la posibilidad de que reciba argumentos y
 específicamente del tipo que queremos:
 
 ```dart
@@ -112,9 +113,295 @@ hacer.__ Y es entendible que el proceso les parezca super lento, pero a medida q
 lo van entrenando es súper poderoso porque la posibilidad de errores disminuye
 al mínimo y con ello, la posibilidad de tener que volver atrás en una tarea que
 les llevó mucho tiempo y tiempo de otros involucrados en el proceso. Y __aquí
-quiero hacer una salvedad muy importante: hasta el momento, en salvo una de las
-compañías que trabajé, logramos luego de mucho insistir, que este sea el modo de
-trabajo por defecto.__ Sin embargo, es entendible que no suceda usualmente ya
-que los tiempos en esta industria vuelan y aun parecemos no entender que a veces
-ir despacio al comienzo, nos permite acelerar gradualmente para correr en el
-mediano plazo__.
+quiero hacer una salvedad muy importante: hasta el momento, en solo una de las
+compañías que trabajé, logramos luego de mucho insistir, que el TDD sea el modo
+por defecto o por lo menos, incluir tests en la primera instancia del
+desarrollo.__ Sin embargo, es entendible que no suceda usualmente ya que los
+tiempos en esta industria vuelan y __aun no entendemos que a veces caminar
+lentamente al comienzo, nos permite correr en el mediano plazo y finalmente,
+volar en el futuro__.
+
+Bueno, entre tanta cháchara, me perdí! Ah! 💡 __Menos mal que tenemos nuestros
+tests para recordarnos donde estamos!__ 😉
+
+Decíamos que tenemos que agregarle un tipo de retorno! A hacerlo:
+
+```dart
+int substract(int a, int b) {}
+```
+
+Lo hacemos y vuelve a aparecernos un error: 'The body might complete normally,
+causing 'null' to be returned, but the return type, 'int', is a potentially
+non-nullable type. Try adding either a return or a throw statement at the end.'
+
+Como no tenemos nada en el cuerpo de dicha función, Dart nos dice que puede
+llegar a retornar un `null` cuando en realidad necesitamos un `int`, que no es
+nulleable. Entonces nos pide un `return` que podría verse así:
+
+```dart
+int substract(int a, int b) {
+  return
+}
+```
+
+Pero entonces nos pide un punto y coma:
+
+```dart
+int substract(int a, int b) {
+  return;
+}
+```
+
+Y entonces nos pide un valor! No se cansa nunca! 🤣 Por suerte nosotros tampoco
+y menos ahora que hemos llegado al punto clave de la cuestión! Qué tenemos que
+poner en este cuerpecito? La función de resta:
+
+```dart
+int substract(int a, int b) {
+  return b - a;
+}
+```
+
+Fíjense que como yo había asignado `1` a `a` y `2` a `b` y nuestra desripción
+dice sustraer 1 a 2, entonces tuve que invertirlo en el cuerpo de la función. Lo
+lógico sería hacerlo a la inversa pero eso podría confundirlos en las variables
+así que creo ninguna opción es mejor! 😆 No importa porque lo que persigo es que
+entiendan el proceso. Córranlo!
+
+Y ahora sí, finalmente, pueden ver que no hay ningún error en la escritura del
+test pero aun tenemos que comprobar si corre de forma correcta! 💀 Vamos a ver
+si funciona?
+
+Imagino habrán ido a probar! Sino, vengo a contarles que funciona perfectamente.
+El asunto es que ahora van a tener que hacer ustedes los próximos tests. 💀
+
+Estoy viendo que esto se está volviendo bastante tétrico con tantas 💀! 🤣 Ya
+vamos a encontrar otro mecanismo mejor. Mientras tanto me alegro de haberles
+consumido un poco de espacio para que no vean la solución!
+
+La hicieron? Será que tanto a ustedes como a mí se les pasó que la últrima
+descripción de nuestro test estaba mal? Juro que no lo hice a propósito:
+'substract -1 to -2, results in -3'. Si a `-2` le restamos `-1`, no nos queda
+`-3`, nos debería quedar `-1`. Saben cómo me di cuenta? Adivinen! Sí! Cuando
+corrí mis tests! Aquí todas las soluciones corregidas:
+
+```dart
+import 'package:calculator/calculator.dart';
+import 'package:test/test.dart';
+
+main() {
+  test('substract 1 to 2, results in 1', () {
+    // Arrange
+    const a = 1;
+    const b = 2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, 1);
+  });
+  test('substract 2 to 2, results in 0', () {
+    // Arrange
+    const a = 2;
+    const b = 2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, 0);
+  });
+  test('substract 3 to 2, results in -1', () {
+    // Arrange
+    const a = 3;
+    const b = 2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, -1);
+  });
+  test('substract -1 to -2, results in -3', () {
+    // Arrange
+    const a = -1;
+    const b = -2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, -1);
+  });
+}
+```
+
+Y ahora que ya hicieron todo, me di cuenta de algo más; no me odien 🫣: nunca
+probamos qué sucedería si restamos 1.5 a 2 por ejemplo! 💀 Tengan en cuenta que
+van a tener que realizar cambios y no solo agregar un nuevo caso de uso con su
+respectivo test. A trabajar!
+
+Así quedaron mis tests:
+
+```dart
+import 'package:calculator/calculator.dart';
+import 'package:test/test.dart';
+
+main() {
+  test('substract 1 to 2, results in 1', () {
+    // Arrange
+    const a = 1;
+    const b = 2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, 1);
+  });
+  test('substract 2 to 2, results in 0', () {
+    // Arrange
+    const a = 2;
+    const b = 2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, 0);
+  });
+  test('substract 3 to 2, results in -1', () {
+    // Arrange
+    const a = 3;
+    const b = 2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, -1);
+  });
+  test('substract -1 to -2, results in -3', () {
+    // Arrange
+    const a = -1;
+    const b = -2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, -1);
+  });
+  test('substract 1.5 to 2, results in 0.5', () {
+    // Arrange
+    const a = 1.5;
+    const b = 2;
+    // Act
+    var result = substract(a, b);
+    // Assert
+    expect(result, 0.5);
+  });
+}
+```
+
+Y así quedó mi función:
+
+```dart
+num substract(num a, num b) => b - a;
+```
+
+Ahora sí! Ya tenemos todo y díganme si realmente no es de enorme ayuda en el
+proceso?
+
+Para dejarlo cerradito como un paquete (🎁), nos faltaría alguito más.
+
+## Given Then When
+
+La convención "_Given_ (Dado), _When_ (Cuando) _Then_ (Entonces)" es un enfoque
+ampliamente utilizado para escribir casos de prueba en pruebas unitarias. Nos
+da una forma estructurada de organizar y escribir casos de prueba que es
+realmente muy fácil de entender y seguir. Y lo más importante, es que es una
+[convención](), lo que significa que no solamente lo vamos a nosotros sino que
+el resto de la industria también lo usa, por lo que si van a trabajar a una
+empresa de primer nivel, ya van a conocer la forma en la que escriben sus tests! 🥳
+
+Funciona así:
+
+1. _Given_: Este paso establece el contexto para el caso de prueba. Establece
+   las condiciones iniciales en las que operará la prueba. En pocas palabras, lo
+   que ya conocen como _Arrange_.
+
+2. _When_: Este paso define las acciones o eventos que realizará el caso de
+   prueba. Representa la operación que desea probar; _Act_.
+
+3. _Then_: Este paso especifica los resultados esperados del caso de prueba.
+   Involucra verificar que el código haga lo que le pedimos, lo que ya conocían
+   como _Assert_.
+
+Esta convención nos ayuda a garantizar que los casos de prueba sean claros,
+concisos y bien organizados. También lo ayuda a pensar en los diferentes
+escenarios y casos límite (casos bien raros!) que debe probar, asegurando que el
+código esté completamente probado y sea confiable.
+
+💀 Qué les parece entonces si arreglamos todos nuestros tests para utilizar dicha
+convención, inclusive en los comentarios que nos ordenan el cuerpo del test?
+Nuevamente, vayan a por ello!
+
+```dart
+main() {
+  test(
+      'Given two integers 2 and 1, when 1 is subtracted from 2, then the result should be 1',
+      () {
+    // GIVEN
+    const a = 1;
+    const b = 2;
+
+    // WHEN
+    var result = substract(a, b);
+
+    // THEN
+    expect(result, 1);
+  });
+
+  test(
+      'Given two integers 2 and 2, when 2 is subtracted from 2, then the result should be 0',
+      () {
+    // GIVEN
+    const a = 2;
+    const b = 2;
+
+    // WHEN
+    var result = substract(a, b);
+
+    // THEN
+    expect(result, 0);
+  });
+
+  test(
+      'Given two integers 2 and 3, when 3 is subtracted from 2, then the result should be -1',
+      () {
+    // GIVEN
+    const a = 3;
+    const b = 2;
+
+    // WHEN
+    var result = substract(a, b);
+
+    // THEN
+    expect(result, -1);
+  });
+
+  test(
+      'Given two integers -2 and -1, when -1 is subtracted from -2, then the result should be -3',
+      () {
+    // GIVEN
+    const a = -1;
+    const b = -2;
+
+    // WHEN
+    var result = substract(a, b);
+
+    // THEN
+    expect(result, -1);
+  });
+
+  test(
+      'Given two numbers 2 and 1.5, when 1.5 is subtracted from 2, then the result should be 0.5',
+      () {
+    // GIVEN
+    const a = 1.5;
+    const b = 2;
+
+    // WHEN
+    var result = substract(a, b);
+
+    // THEN
+    expect(result, 0.5);
+  });
+}
+```
