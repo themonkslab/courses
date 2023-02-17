@@ -1,41 +1,53 @@
 import 'package:calculator/calculator.dart';
 import 'package:test/test.dart';
 
-main() {
-  test('add 1 to 2, results in 3', () {
-    // Arrange
+void main() {
+  test('Given 1 and 2, when add is called, then it should result in 3', () {
+    // Given
     const a = 1;
     const b = 2;
-    // Act
+
+    // When
     var result = add(a, b);
-    // Assert
+
+    // Then
     expect(result, 3);
   });
-  test('add 1 to -2, results in -1', () {
-    // Arrange
+
+  test('Given 1 and -2, when add is called, then it should result in -1', () {
+    // Given
     const a = 1;
     const b = -2;
-    // Act
+
+    // When
     var result = add(a, b);
-    // Assert
+
+    // Then
     expect(result, -1);
   });
-  test('add -1 to -2, results in -3', () {
-    // Arrange
+
+  test('Given -1 and -2, when add is called, then it should result in -3', () {
+    // Given
     const a = -1;
     const b = -2;
-    // Act
+
+    // When
     var result = add(a, b);
-    // Assert
+
+    // Then
     expect(result, -3);
   });
-  test('add 1.5 to 2.5, results in 4.0', () {
-    // Arrange
+
+  test('Given 1.5 and 2.5, when add is called, then it should result in 4.0',
+      () {
+    // Given
     const a = 1.5;
     const b = 2.5;
-    // Act
+
+    // When
     var result = add(a, b);
-    // Assert
-    expect(result, 4);
+
+    // Then
+    expect(result, 4.0);
   });
 }

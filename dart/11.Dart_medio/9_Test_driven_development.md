@@ -405,3 +405,232 @@ main() {
   });
 }
 ```
+
+💀 Y como no podría ser de otra manera, tienen ya todos los elementos para
+actualizar con la misma convención los tests para el `add` y para crear los
+faltantes (`multiply` y `divide`). Los espero!
+
+Aquí los de multiplicación:
+
+```dart
+import 'package:calculator/calculator.dart';
+import 'package:test/test.dart';
+
+void main() {
+  test('Given 2 and 1, when multiply is called, then it should result in 2',
+      () {
+    // Given
+    const a = 2;
+    const b = 1;
+
+    // When
+    var result = multiply(a, b);
+
+    // Then
+    expect(result, 2);
+  });
+
+  test('Given 2 and -1, when multiply is called, then it should result in -2',
+      () {
+    // Given
+    const a = 2;
+    const b = -1;
+
+    // When
+    var result = multiply(a, b);
+
+    // Then
+    expect(result, -2);
+  });
+
+  test('Given -2 and -1, when multiply is called, then it should result in 2',
+      () {
+    // Given
+    const a = -2;
+    const b = -1;
+
+    // When
+    var result = multiply(a, b);
+
+    // Then
+    expect(result, 2);
+  });
+
+  test(
+      'Given 2.0 and 1.0, when multiply is called, then it should result in 2.0',
+      () {
+    // Given
+    const a = 2.0;
+    const b = 1.0;
+
+    // When
+    var result = multiply(a, b);
+
+    // Then
+    expect(result, 2.0);
+  });
+}
+```
+
+Y aquí los de división:
+
+```dart
+import 'package:calculator/calculator.dart';
+import 'package:test/test.dart';
+
+void main() {
+  test('Given 2 and 1, when divide is called, then it should result in 2', () {
+    // Given
+    const a = 2;
+    const b = 1;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 2);
+  });
+
+  test('Given 2 and -1, when divide is called, then it should result in -2',
+      () {
+    // Given
+    const a = 2;
+    const b = -1;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, -2);
+  });
+
+  test('Given -2 and -1, when divide is called, then it should result in 2',
+      () {
+    // Given
+    const a = -2;
+    const b = -1;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 2);
+  });
+
+  test('Given 2.0 and 1.0, when divide is called, then it should result in 2.0',
+      () {
+    // Given
+    const a = 2.0;
+    const b = 1.0;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 2.0);
+  });
+
+  test('Given 2 and 0, when divide is called, then it should result in 0', () {
+    // Given
+    const a = 2;
+    const b = 0;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 0);
+  });
+
+  test('Given 0 and 2, when divide is called, then it should result in 0', () {
+    // Given
+    const a = 0;
+    const b = 2;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 0);
+  });
+
+  test('Given 0 and 0, when divide is called, then it should result in 0', () {
+    // Given
+    const a = 0;
+    const b = 0;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 0);
+  });
+}
+```
+
+Perfecto! Ya veo que les está agarr... 🤔 Imagino habrán probado no solamente su
+código y comparado con el mío sino que también habrán escrito el mío y lo habrán
+probado no? 💀 Si no lo hicieron, es momento de hacerlo!
+
+Bueno, no pienso entrar en explicaciones matemáticas pero básicamente si ustedes
+dividen un número por cero, en Dart el resultado esperado no sería `0` sino
+`Infinity`. Por otro lado, si intentamos dividir `0` por `0`, es un resultado
+imposible de determinar, lo que Dart aquí representa como `NaN` (_Not a number_;
+no es un número).
+
+Dicho esto, si efectivamente corrieron mis tests, deberían haber fallado 2.
+Estos son los tests fallidos:
+
+```dart
+  test('Given 2 and 0, when divide is called, then it should result in 0', () {
+    // Given
+    const a = 2;
+    const b = 0;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 0);
+  });
+
+  test('Given 0 and 0, when divide is called, then it should result in 0', () {
+    // Given
+    const a = 0;
+    const b = 0;
+
+    // When
+    var result = divide(a, b);
+
+    // Then
+    expect(result, 0);
+  });
+```
+
+Para el primero de los tests que fallan, podríamos tener muchas soluciones. Yo
+elegí explorar en el `result`, que es un `num` (ya vieron que sería la clase
+padre de `int` y `double`) y ver qué tenía dentro de sus métodos; descubrí
+`isInfinity`. Ese método nos arroja un booleano en `true` si efectivamente es
+infinito.
+
+Hasta ahí tenemos el _actual_ o la primera parte del `expect`. Cuál sería el
+_matcher_? Resulta que hay _matchers_ ya creados para nosotros:
+
+- _equals_: Determina si dos objetos son iguales usando operator ==.
+- _isTrue_, isFalse: Determina si el valor actual es verdadero o falso.
+- _isNull_: Determina si el valor actual es nulo.
+- _isNotNull_: Determina si el valor actual no es nulo.
+- _isInstanceOf_\<T>: Determina si el valor actual es una instancia del tipo T.
+- _isA_\<T>: Alias para isInstanceOf\<T>.
+- _throwsA_\<Exception>: Determina si la función proporcionada lanza una excepción del tipo especificado.
+- _throwsA_(predicate): Determina si la función proporcionada lanza una excepción que satisface el predicado proporcionado.
+- _closeTo_: Determina si un número de coma flotante está cerca de un valor dado dentro de una cierta tolerancia.
+- _greaterThan_: Determina si un valor es mayor que el valor esperado.
+- _lessThan_: Determina si un valor es menor que el valor esperado.
+- _contains_: Determina si un iterable o una cadena contiene un valor esperado.
+- _hasLength_: Determina si un iterable o una cadena tiene la longitud esperada.
+
+Hay alguno de estos que aun no vamos a utilizar pero ya los voy dejando! 🫣
+
+<!-- TODO -CONT-: explicar el isTrue y luego utilizar el result.isNan de la
+misma forma  -->
