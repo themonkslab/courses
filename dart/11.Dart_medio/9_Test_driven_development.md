@@ -306,9 +306,9 @@ La convención "_Given_ (Dado), _When_ (Cuando) _Then_ (Entonces)" es un enfoque
 ampliamente utilizado para escribir casos de prueba en pruebas unitarias. Nos
 da una forma estructurada de organizar y escribir casos de prueba que es
 realmente muy fácil de entender y seguir. Y lo más importante, es que es una
-[convención](), lo que significa que no solamente lo vamos a nosotros sino que
-el resto de la industria también lo usa, por lo que si van a trabajar a una
-empresa de primer nivel, ya van a conocer la forma en la que escriben sus tests! 🥳
+[convención](), lo que significa que no solamente lo vamos a utilizar nosotros
+sino que el resto de la industria también lo usa, por lo que si van a trabajar a
+una empresa de primer nivel, ya van a conocer la forma en la que escriben sus tests! 🥳
 
 Funciona así:
 
@@ -324,7 +324,7 @@ Funciona así:
    como _Assert_.
 
 Esta convención nos ayuda a garantizar que los casos de prueba sean claros,
-concisos y bien organizados. También lo ayuda a pensar en los diferentes
+concisos y bien organizados. También nos ayuda a pensar en los diferentes
 escenarios y casos límite (casos bien raros!) que debe probar, asegurando que el
 código esté completamente probado y sea confiable.
 
